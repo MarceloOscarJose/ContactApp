@@ -78,7 +78,7 @@ class ContactModel: NSObject {
     func getContacts() -> [ContactDataModel] {
         var dataModelContacts: [ContactDataModel] = []
 
-        if let contacts = PersistenceManager.shared.fetch(Contact.self, sortBy: "firstName", ascending: true) {
+        if let contacts = PersistenceManager.shared.fetch(Contact.self, sortBy: "lastName", ascending: true) {
             for contact in contacts {
                 dataModelContacts.append(ContactDataModel(contact: contact))
             }

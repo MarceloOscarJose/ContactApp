@@ -29,6 +29,7 @@ class ContactAppTests: XCTestCase {
 
         model.changeInitContactsProperty(value: false)
         contacts = model.initContacts()
+        model.changeInitContactsProperty(value: true)
         XCTAssert(contacts.count == 10)
     }
 }

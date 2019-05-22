@@ -52,7 +52,7 @@ class PersistenceManager: NSObject {
 
     func fetchById<T: NSManagedObject>(_ objectType: T.Type, idKey: String, id: String) -> T? {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: objectType))
-        fetchRequest.predicate = NSPredicate(format: "contactID = %@", id)
+        fetchRequest.predicate = NSPredicate(format: "\(idKey) = %@", id)
 
         do {
             let fetchedObject = try persistentContainer.viewContext.fetch(fetchRequest).first as? T

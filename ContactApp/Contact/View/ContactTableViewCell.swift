@@ -16,7 +16,7 @@ class ContactTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
 
-    func updateCell(contactName: String) {
-        contactNameLabel.text = contactName
+    func updateCell(firstName: String, lastName: String) {
+        contactNameLabel.text = "\(firstName) \(lastName)"
     }
 }

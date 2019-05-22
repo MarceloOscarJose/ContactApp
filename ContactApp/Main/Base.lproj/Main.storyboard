@@ -41,7 +41,7 @@
             </objects>
             <point key="canvasLocation" x="433" y="-419"/>
         </scene>
-        <!--Contact List View Controller-->
+        <!--Contacts-->
         <scene sceneID="RjK-6F-W7Z">
             <objects>
                 <viewController id="7n6-sW-OwJ" customClass="ContactListViewController" customModule="ContactApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -78,7 +78,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pLG-Bk-JC5"/>
                     </view>
-                    <navigationItem key="navigationItem" id="F74-Hx-7Ik"/>
+                    <navigationItem key="navigationItem" title="Contacts" id="F74-Hx-7Ik">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rER-sH-uog"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="contactTableView" destination="djv-c6-oQM" id="ROs-Xd-2zh"/>
                     </connections>

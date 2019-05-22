@@ -38,7 +38,7 @@ extension ContactListViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: contactCellIdentifier, for: indexPath) as! ContactTableViewCell
         let contactData = contactsData[indexPath.item]
-        cell.updateCell(contactName: contactData.firstName)
+        cell.updateCell(firstName: contactData.firstName, lastName: contactData.lastName)
         return cell
     }
 }
