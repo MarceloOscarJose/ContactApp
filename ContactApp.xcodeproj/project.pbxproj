@@ -130,7 +130,6 @@
 				9C1C78A12294593900227047 /* Model */,
 				9C1C78A02294591D00227047 /* Resources */,
 				9C1C787C22944E0600227047 /* AppDelegate.swift */,
-				9C1C78B22294BB6C00227047 /* PersistenceManager.swift */,
 				9C5B5A742295738A006CA17A /* ConfigManager.swift */,
 			);
 			path = Common;
@@ -139,10 +138,10 @@
 		9C1C78A02294591D00227047 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9C1C788822944E0700227047 /* LaunchScreen.storyboard */,
 				9C1C788622944E0700227047 /* Assets.xcassets */,
-				9C1C78AC22945F4500227047 /* Contacts.json */,
+				9C1C788822944E0700227047 /* LaunchScreen.storyboard */,
 				9C5B5A76229573A5006CA17A /* Config.plist */,
+				9C1C78AC22945F4500227047 /* Contacts.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -150,6 +149,7 @@
 		9C1C78A12294593900227047 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9C1C78B22294BB6C00227047 /* PersistenceManager.swift */,
 				9C1C788322944E0600227047 /* ContactApp.xcdatamodeld */,
 			);
 			path = Model;
