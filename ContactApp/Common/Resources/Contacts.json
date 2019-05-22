@@ -1,0 +1,102 @@
+[
+    {
+        "firstName": "Bertrand",
+        "lastName": "Russell",
+        "phoneNumber": "(313)785-7448",
+        "streetAddress1": "80 Bedford Rd",
+        "streetAddress2": "Dubuque, IA 52001",
+        "city": "Monmouthshire",
+        "state": "Trellech",
+        "zipCode": "35801"
+    },
+    {
+        "firstName": "Elon Reeve",
+        "lastName": "Musk",
+        "phoneNumber": "(754)703-2043",
+        "streetAddress1": "7633 Cherry Hill Court",
+        "streetAddress2": "Middletown, CT 06457",
+        "city": "Pretoria",
+        "state": "Gauteng",
+        "zipCode": "32801"
+    },
+    {
+        "firstName": "Maria Salomea",
+        "lastName": "Curie",
+        "phoneNumber": "(516)984-6714",
+        "streetAddress1": "219 Wild Rose Court",
+        "streetAddress2": "South Ozone Park, NY 11420",
+        "city": "Varsovia",
+        "state": "Varsovia",
+        "zipCode": "21201"
+    },
+    {
+        "firstName": "Rosalind",
+        "lastName": "Franklin",
+        "phoneNumber": "(224)805-4235",
+        "streetAddress1": "65 Hillside St.",
+        "streetAddress2": "Xenia, OH 45385",
+        "city": "Notting Hill",
+        "state": "London",
+        "zipCode": "21237"
+    },
+    {
+        "firstName": "Albert",
+        "lastName": "Einstein",
+        "phoneNumber": "(520)906-5697",
+        "streetAddress1": "969 South Eagle Ave.",
+        "streetAddress2": "Cheshire, CT 06410",
+        "city": "Ulm",
+        "state": "Stuttgart",
+        "zipCode": "53201"
+    },
+    {
+        "firstName": "Blaise",
+        "lastName": "Pascal",
+        "phoneNumber": "(423)663-8430",
+        "streetAddress1": "273 Rockville Dr.",
+        "streetAddress2": "Clifton, NJ 07011",
+        "city": "Clermont",
+        "state": "Auvernia",
+        "zipCode": "84321"
+    },
+    {
+        "firstName": "Stephen",
+        "lastName": "Hawking",
+        "phoneNumber": "(206)272-4517",
+        "streetAddress1": "9162 Johnson Street",
+        "streetAddress2": "Canfield, OH 44406",
+        "city": "Cambridge",
+        "state": "Oxford",
+        "zipCode": "02840"
+    },
+    {
+        "firstName": "Benjamin",
+        "lastName": "Franklin",
+        "phoneNumber": "(229)496-9914",
+        "streetAddress1": "7704 Westminster Avenue",
+        "streetAddress2": "Spring Valley, NY 10977",
+        "city": "Boston",
+        "state": "Massachusetts",
+        "zipCode": "02841"
+    },
+    {
+        "firstName": "Alexander",
+        "lastName": "Fleming",
+        "phoneNumber": "(502)752-3506",
+        "streetAddress1": "61 Bank Street",
+        "streetAddress2": "Norcross, GA 30092",
+        "city": "Darvel",
+        "state": "Ayrshire",
+        "zipCode": "15201"
+    },
+    {
+        "firstName": "Nikola",
+        "lastName": "Tesla",
+        "phoneNumber": "(201)494-4306",
+        "streetAddress1": "330 SE. Smoky Hollow Ave.",
+        "streetAddress2": "Lake Charles, LA 70605",
+        "city": "Smiljan",
+        "state": "Gospić",
+        "zipCode": "15244"
+    }
+]
