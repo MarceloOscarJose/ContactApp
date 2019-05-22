@@ -79,6 +79,9 @@
                         <viewLayoutGuide key="safeArea" id="pLG-Bk-JC5"/>
                     </view>
                     <navigationItem key="navigationItem" id="F74-Hx-7Ik"/>
+                    <connections>
+                        <outlet property="contactTableView" destination="djv-c6-oQM" id="ROs-Xd-2zh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15h-M5-vFA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
