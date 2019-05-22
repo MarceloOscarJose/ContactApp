@@ -40,6 +40,19 @@ class ContactModel: NSObject {
         return UserDefaults.standard.bool(forKey: initContactKey)
     }
 
+    func deleteContact(contact: ContactDataModel) {
+        let backgroundContext = PersistenceManager.shared.persistentContainer.viewContext
+
+        do {
+            if let contactData = PersistenceManager.shared.fetchById(Contact.self, idKey: "contactID", id: contact.contactID) {
+                backgroundContext.delete(contactData)
+                try backgroundContext.save()
+            }
+        } catch {
+            print(error)
+        }
+    }
+
     func saveContact(contact: ContactDataModel) {
         let backgroundContext = PersistenceManager.shared.persistentContainer.viewContext
 
@@ -63,10 +76,12 @@ class ContactModel: NSObject {
     }
 
     func getContacts() -> [ContactDataModel] {
-        let contacts = PersistenceManager.shared.fetch(Contact.self, sortBy: "firstName", ascending: true)
         var dataModelContacts: [ContactDataModel] = []
-        for contact in contacts {
-            dataModelContacts.append(ContactDataModel(contact: contact))
+
+        if let contacts = PersistenceManager.shared.fetch(Contact.self, sortBy: "firstName", ascending: true) {
+            for contact in contacts {
+                dataModelContacts.append(ContactDataModel(contact: contact))
+            }
         }
 
         return dataModelContacts

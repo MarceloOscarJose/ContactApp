@@ -37,7 +37,7 @@ class PersistenceManager: NSObject {
         }
     }
 
-    func fetch<T: NSManagedObject>(_ objectType: T.Type, sortBy: String, ascending: Bool) -> [T] {
+    func fetch<T: NSManagedObject>(_ objectType: T.Type, sortBy: String, ascending: Bool) -> [T]? {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: objectType))
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: sortBy, ascending: ascending)]
 
@@ -46,20 +46,20 @@ class PersistenceManager: NSObject {
             return fetchedObjects ?? [T]()
         } catch {
             print(error)
-            return [T]()
+            return nil
         }
     }
 
-    func fetchById<T: NSManagedObject>(_ objectType: T.Type, id: String) -> [T] {
+    func fetchById<T: NSManagedObject>(_ objectType: T.Type, idKey: String, id: String) -> T? {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: objectType))
-        fetchRequest.predicate = NSPredicate(format: "id = %@", id)
+        fetchRequest.predicate = NSPredicate(format: "contactID = %@", id)
 
         do {
-            let fetchedObjects = try persistentContainer.viewContext.fetch(fetchRequest) as? [T]
-            return fetchedObjects ?? [T]()
+            let fetchedObject = try persistentContainer.viewContext.fetch(fetchRequest).first as? T
+            return fetchedObject ?? nil
         } catch {
             print(error)
-            return [T]()
+            return nil
         }
     }
 }

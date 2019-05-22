@@ -24,6 +24,7 @@ class ContactListViewController: UIViewController {
     func setupControls() {
         contactTableView.delegate = self
         contactTableView.dataSource = self
+        contactTableView.rowHeight = 50
         contactTableView.register(UINib(nibName: contactCellIdentifier, bundle: .main), forCellReuseIdentifier: contactCellIdentifier)
         contactsData = model.initContacts()
     }
