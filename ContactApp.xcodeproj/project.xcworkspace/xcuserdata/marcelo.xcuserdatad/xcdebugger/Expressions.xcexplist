@@ -3,12 +3,29 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "closure #1 in closure #1 in ContactListViewController.searchBar(_:textDidChange:):ContactListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "fullName.contains(searchText.lowercased())">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "PersistenceManager.fetchById&lt;A&gt;(_:idKey:id:):PersistenceManager.swift">
          <PersistentStrings>
             <PersistentString
                value = "String(describing: objectType)">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ContactListViewController.searchBar(_:textDidChange:):ContactListViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ContactListViewController.tableView(_:cellForRowAt:):ContactListViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ContactAppTests.testContactModel():ContactAppTests.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>
