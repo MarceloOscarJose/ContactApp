@@ -12,7 +12,7 @@ class ContactModel: NSObject {
 
     let initContactKey = ConfigManager.shared.config.initContacsKey
 
-    func initContacts()  -> [ContactDataModel] {
+    func initContacts() -> [[ContactDataModel]] {
         if !shouldSaveInitContacts() {
             changeInitContactsProperty(value: true)
             if let path = Bundle.main.path(forResource: "Contacts", ofType: "json") {
@@ -75,15 +75,28 @@ class ContactModel: NSObject {
         }
     }
 
-    func getContacts() -> [ContactDataModel] {
-        var dataModelContacts: [ContactDataModel] = []
+    func getContacts() -> [[ContactDataModel]] {
+        var dataModelContacts: [String: [ContactDataModel]] = [:]
 
         if let contacts = PersistenceManager.shared.fetch(Contact.self, sortBy: "lastName", ascending: true) {
             for contact in contacts {
-                dataModelContacts.append(ContactDataModel(contact: contact))
+                if let contactlastname = contact.lastName, let contactSection = contactlastname.first {
+                    if var keyContacts = dataModelContacts[String(contactSection)] {
+                        keyContacts.append(ContactDataModel(contact: contact))
+                        dataModelContacts.updateValue(keyContacts, forKey: String(contactSection))
+                    } else {
+                        dataModelContacts.updateValue([ContactDataModel(contact: contact)], forKey: String(contactSection))
+                    }
+                }
             }
         }
 
-        return dataModelContacts
+        let sortedData = dataModelContacts.sorted { (aDic, bDic) -> Bool in
+            return aDic.key < bDic.key
+        }.compactMap { (key: String, value: [ContactDataModel]) -> [ContactDataModel] in
+            return value
+        }
+
+        return sortedData
     }
 }

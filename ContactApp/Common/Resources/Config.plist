@@ -2,6 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>contactListScopes</key>
+	<array>
+		<string>A -F</string>
+		<string>G - M</string>
+		<string>N - T</string>
+		<string>U - Z</string>
+	</array>
 	<key>initContacsKey</key>
 	<string>InitContacts</string>
 </dict>
