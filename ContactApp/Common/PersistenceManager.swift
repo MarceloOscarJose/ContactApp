@@ -10,7 +10,7 @@ import CoreData
 
 class PersistenceManager: NSObject {
 
-    static let sharedInstance = PersistenceManager()
+    static let shared = PersistenceManager()
 
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "ContactApp")

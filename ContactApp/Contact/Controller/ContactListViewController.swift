@@ -14,6 +14,7 @@ class ContactListViewController: UIViewController {
     let contactCellIdentifier = "ContactTableViewCell"
 
     let model = ContactModel()
+    var contactsData: [ContactDataModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,17 +25,19 @@ class ContactListViewController: UIViewController {
         contactTableView.delegate = self
         contactTableView.dataSource = self
         contactTableView.register(UINib(nibName: contactCellIdentifier, bundle: .main), forCellReuseIdentifier: contactCellIdentifier)
-        model.initContacts()
+        contactsData = model.initContacts()
     }
 }
 
 extension ContactListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return contactsData.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: contactCellIdentifier, for: indexPath) as! ContactTableViewCell
+        let contactData = contactsData[indexPath.item]
+        cell.updateCell(contactName: contactData.firstName)
         return cell
     }
 }

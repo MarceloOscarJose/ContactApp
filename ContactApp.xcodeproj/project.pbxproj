@@ -22,6 +22,8 @@
 		9C1C78B92294C20800227047 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1C78B82294C20800227047 /* MainViewController.swift */; };
 		9C5B5A7222956FA7006CA17A /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5B5A7022956FA7006CA17A /* ContactTableViewCell.swift */; };
 		9C5B5A7322956FA7006CA17A /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C5B5A7122956FA7006CA17A /* ContactTableViewCell.xib */; };
+		9C5B5A752295738A006CA17A /* ConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5B5A742295738A006CA17A /* ConfigManager.swift */; };
+		9C5B5A77229573A5006CA17A /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C5B5A76229573A5006CA17A /* Config.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		9C1C78B82294C20800227047 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9C5B5A7022956FA7006CA17A /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		9C5B5A7122956FA7006CA17A /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
+		9C5B5A742295738A006CA17A /* ConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigManager.swift; sourceTree = "<group>"; };
+		9C5B5A76229573A5006CA17A /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,7 @@
 				9C1C788822944E0700227047 /* LaunchScreen.storyboard */,
 				9C1C787C22944E0600227047 /* AppDelegate.swift */,
 				9C1C78B22294BB6C00227047 /* PersistenceManager.swift */,
+				9C5B5A742295738A006CA17A /* ConfigManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 			children = (
 				9C1C788622944E0700227047 /* Assets.xcassets */,
 				9C1C78AC22945F4500227047 /* Contacts.json */,
+				9C5B5A76229573A5006CA17A /* Config.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -296,6 +302,7 @@
 				9C1C788A22944E0700227047 /* LaunchScreen.storyboard in Resources */,
 				9C1C788722944E0700227047 /* Assets.xcassets in Resources */,
 				9C5B5A7322956FA7006CA17A /* ContactTableViewCell.xib in Resources */,
+				9C5B5A77229573A5006CA17A /* Config.plist in Resources */,
 				9C1C788222944E0600227047 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,6 +324,7 @@
 				9C1C788522944E0600227047 /* ContactApp.xcdatamodeld in Sources */,
 				9C1C78B72294BF9F00227047 /* ContactListViewController.swift in Sources */,
 				9C1C78B32294BB6C00227047 /* PersistenceManager.swift in Sources */,
+				9C5B5A752295738A006CA17A /* ConfigManager.swift in Sources */,
 				9C1C78AB22945DD600227047 /* DetailViewController.swift in Sources */,
 				9C1C78B12294B9A100227047 /* ContactModel.swift in Sources */,
 				9C1C78AF2294AE3500227047 /* ContactDataModel.swift in Sources */,
