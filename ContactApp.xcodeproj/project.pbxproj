@@ -168,8 +168,8 @@
 		9C1C78A522945C3000227047 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9C1C78AE2294AE3500227047 /* ContactDataModel.swift */,
 				9C1C78B02294B9A100227047 /* ContactModel.swift */,
+				9C1C78AE2294AE3500227047 /* ContactDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
