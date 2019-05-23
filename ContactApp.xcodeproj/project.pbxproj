@@ -207,6 +207,7 @@
 		9C1C78A822945DBC00227047 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				9CEC9B4D22965D4E00D08D90 /* View */,
 				9C1C78A922945DC200227047 /* Controller */,
 			);
 			path = Detail;
@@ -252,6 +253,13 @@
 				9CEC9B3D2295986B00D08D90 /* UIColor.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		9CEC9B4D22965D4E00D08D90 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -18,7 +18,7 @@ class ContactHeaderTableViewCell: UITableViewCell {
 
     func updateCell(sectionTitle: Character?) {
         if let sectionTitle = sectionTitle {
-            sectionTitleLabel.text = String(sectionTitle)
+            sectionTitleLabel.text = sectionTitle.uppercased()
         }
     }
 }
