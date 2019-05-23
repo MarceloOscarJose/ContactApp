@@ -1,17 +1,15 @@
 //
-//  Contact+CoreDataProperties.swift
+//  Contact+Property.swift
 //  ContactApp
 //
-//  Created by Marcelo José on 22/05/2019.
+//  Created by Marcelo José on 23/05/2019.
 //  Copyright © 2019 Marcelo José. All rights reserved.
-//
 //
 
 import Foundation
 import CoreData
 
 extension Contact {
-
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Contact> {
         return NSFetchRequest<Contact>(entityName: "Contact")
     }
@@ -25,4 +23,17 @@ extension Contact {
     @NSManaged public var city: String?
     @NSManaged public var state: String?
     @NSManaged public var zipCode: String?
+
+    public enum ContactCodingKeys: String, CodingKey, CaseIterable {
+        case contactID, firstName, lastName, phoneNumber, streetAddress1, streetAddress2, city, state, zipCode
+    }
+
+    enum ContactDecodeError: Error {
+        case contextNotFound
+    }
+}
+
+// MARK: Entity context
+extension CodingUserInfoKey {
+    static let context = CodingUserInfoKey(rawValue: "context")!
 }

@@ -45,7 +45,7 @@ class ContactModel: NSObject {
     }
 
     func deleteContact(contact: Contact) {
-        let backgroundContext = PersistenceManager.shared.persistentContainer.viewContext
+        let backgroundContext = PersistenceManager.shared.persistentContainer.newBackgroundContext()
 
         do {
             if let contactData = PersistenceManager.shared.fetchById(Contact.self, idKey: "contactID", id: contact.contactID) {
