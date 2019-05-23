@@ -82,7 +82,7 @@ class ContactModel: NSObject {
     func getContacts() -> [[Contact]] {
         var dataModelContacts: [String: [Contact]] = [:]
 
-        if let contacts = PersistenceManager.shared.fetch(Contact.self, sortBy: "lastName", ascending: true) {
+        if let contacts = PersistenceManager.shared.fetch(Contact.self, sortBy: ["lastName", "firstName"], ascending: true) {
             for contact in contacts {
                 if let contactSection = contact.lastName.first {
                     if var keyContacts = dataModelContacts[String(contactSection)] {

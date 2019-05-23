@@ -37,9 +37,11 @@ class PersistenceManager: NSObject {
         }
     }
 
-    func fetch<T: NSManagedObject>(_ objectType: T.Type, sortBy: String, ascending: Bool) -> [T]? {
+    func fetch<T: NSManagedObject>(_ objectType: T.Type, sortBy: [String], ascending: Bool) -> [T]? {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: objectType))
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: sortBy, ascending: ascending)]
+        fetchRequest.sortDescriptors = sortBy.map({
+            return NSSortDescriptor(key: $0, ascending: ascending)
+        })
 
         do {
             let fetchedObjects = try persistentContainer.viewContext.fetch(fetchRequest) as? [T]
