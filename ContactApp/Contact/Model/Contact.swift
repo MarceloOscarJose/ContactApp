@@ -10,6 +10,7 @@
 import Foundation
 import CoreData
 
+@objc(Contact)
 class Contact: NSManagedObject, Codable {
 
     required convenience init(from decoder: Decoder) throws {
