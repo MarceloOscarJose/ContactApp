@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         guard let splitViewController = window?.rootViewController as? UISplitViewController,
             let leftNavController = splitViewController.viewControllers.first as? UINavigationController,
-            let contactListViewController = leftNavController.topViewController as? ContactListViewController,
+            let contactListViewController = leftNavController.topViewController as? ListViewController,
             let detailViewController = splitViewController.viewControllers.last as? DetailViewController
             else { fatalError() }
 

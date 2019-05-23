@@ -17,7 +17,7 @@
 		9C1C78AD22945F4500227047 /* Contacts.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C1C78AC22945F4500227047 /* Contacts.json */; };
 		9C1C78B12294B9A100227047 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1C78B02294B9A100227047 /* ContactModel.swift */; };
 		9C1C78B32294BB6C00227047 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1C78B22294BB6C00227047 /* PersistenceManager.swift */; };
-		9C1C78B72294BF9F00227047 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1C78B62294BF9F00227047 /* ContactListViewController.swift */; };
+		9C1C78B72294BF9F00227047 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1C78B62294BF9F00227047 /* ListViewController.swift */; };
 		9C1C78B92294C20800227047 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1C78B82294C20800227047 /* MainViewController.swift */; };
 		9C5B5A7222956FA7006CA17A /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5B5A7022956FA7006CA17A /* ContactTableViewCell.swift */; };
 		9C5B5A7322956FA7006CA17A /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C5B5A7122956FA7006CA17A /* ContactTableViewCell.xib */; };
@@ -28,6 +28,8 @@
 		9CEC9B3E2295986B00D08D90 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC9B3D2295986B00D08D90 /* UIColor.swift */; };
 		9CEC9B4122962DCF00D08D90 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC9B3F22962DCF00D08D90 /* Contact.swift */; };
 		9CEC9B44229646D000D08D90 /* Contact+Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC9B43229646D000D08D90 /* Contact+Property.swift */; };
+		9CEC9B4622964E6800D08D90 /* ListViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC9B4522964E6800D08D90 /* ListViewController+TableView.swift */; };
+		9CEC9B4822964ED200D08D90 /* ListViewController+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC9B4722964ED200D08D90 /* ListViewController+SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +57,7 @@
 		9C1C78AC22945F4500227047 /* Contacts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contacts.json; sourceTree = "<group>"; };
 		9C1C78B02294B9A100227047 /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
 		9C1C78B22294BB6C00227047 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
-		9C1C78B62294BF9F00227047 /* ContactListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
+		9C1C78B62294BF9F00227047 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		9C1C78B82294C20800227047 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9C5B5A7022956FA7006CA17A /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		9C5B5A7122956FA7006CA17A /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
@@ -66,6 +68,8 @@
 		9CEC9B3D2295986B00D08D90 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		9CEC9B3F22962DCF00D08D90 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		9CEC9B43229646D000D08D90 /* Contact+Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+Property.swift"; sourceTree = "<group>"; };
+		9CEC9B4522964E6800D08D90 /* ListViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListViewController+TableView.swift"; sourceTree = "<group>"; };
+		9CEC9B4722964ED200D08D90 /* ListViewController+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListViewController+SearchBar.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,7 +195,9 @@
 		9C1C78A722945C3900227047 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9C1C78B62294BF9F00227047 /* ContactListViewController.swift */,
+				9C1C78B62294BF9F00227047 /* ListViewController.swift */,
+				9CEC9B4522964E6800D08D90 /* ListViewController+TableView.swift */,
+				9CEC9B4722964ED200D08D90 /* ListViewController+SearchBar.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -350,13 +356,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CEC9B4822964ED200D08D90 /* ListViewController+SearchBar.swift in Sources */,
 				9C1C788522944E0600227047 /* ContactApp.xcdatamodeld in Sources */,
 				9CEC9B3E2295986B00D08D90 /* UIColor.swift in Sources */,
-				9C1C78B72294BF9F00227047 /* ContactListViewController.swift in Sources */,
+				9C1C78B72294BF9F00227047 /* ListViewController.swift in Sources */,
 				9C1C78B32294BB6C00227047 /* PersistenceManager.swift in Sources */,
 				9C5B5A752295738A006CA17A /* ConfigManager.swift in Sources */,
 				9C1C78AB22945DD600227047 /* DetailViewController.swift in Sources */,
 				9CEC9B3A22958F8500D08D90 /* ContactHeaderTableViewCell.swift in Sources */,
+				9CEC9B4622964E6800D08D90 /* ListViewController+TableView.swift in Sources */,
 				9C1C78B12294B9A100227047 /* ContactModel.swift in Sources */,
 				9CEC9B44229646D000D08D90 /* Contact+Property.swift in Sources */,
 				9CEC9B4122962DCF00D08D90 /* Contact.swift in Sources */,

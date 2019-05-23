@@ -47,7 +47,7 @@
         <!--Contacts-->
         <scene sceneID="RjK-6F-W7Z">
             <objects>
-                <viewController id="7n6-sW-OwJ" customClass="ContactListViewController" customModule="ContactApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7n6-sW-OwJ" customClass="ListViewController" customModule="ContactApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XC5-l3-KIk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
