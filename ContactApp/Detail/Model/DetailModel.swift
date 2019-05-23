@@ -31,3 +31,9 @@ class DetailModel: NSObject {
         return detailData
     }
 }
+
+struct DetailData {
+    let key: String
+    let name: String
+    var value: String
+}

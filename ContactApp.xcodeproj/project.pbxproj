@@ -23,7 +23,6 @@
 		9C5B5A752295738A006CA17A /* ConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5B5A742295738A006CA17A /* ConfigManager.swift */; };
 		9C5B5A77229573A5006CA17A /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C5B5A76229573A5006CA17A /* Config.plist */; };
 		9C61DF402297121400B140D7 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C61DF3F2297121400B140D7 /* DetailModel.swift */; };
-		9C61DF42229719AC00B140D7 /* DetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C61DF41229719AC00B140D7 /* DetailData.swift */; };
 		9C66085C229682EA007EBDDF /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C66085A229682EA007EBDDF /* DetailTableViewCell.swift */; };
 		9C66085D229682EA007EBDDF /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C66085B229682EA007EBDDF /* DetailTableViewCell.xib */; };
 		9CEC9B3A22958F8500D08D90 /* ContactHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC9B3822958F8500D08D90 /* ContactHeaderTableViewCell.swift */; };
@@ -67,7 +66,6 @@
 		9C5B5A742295738A006CA17A /* ConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigManager.swift; sourceTree = "<group>"; };
 		9C5B5A76229573A5006CA17A /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		9C61DF3F2297121400B140D7 /* DetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
-		9C61DF41229719AC00B140D7 /* DetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailData.swift; sourceTree = "<group>"; };
 		9C66085A229682EA007EBDDF /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		9C66085B229682EA007EBDDF /* DetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
 		9CEC9B3822958F8500D08D90 /* ContactHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactHeaderTableViewCell.swift; sourceTree = "<group>"; };
@@ -249,7 +247,6 @@
 			isa = PBXGroup;
 			children = (
 				9C61DF3F2297121400B140D7 /* DetailModel.swift */,
-				9C61DF41229719AC00B140D7 /* DetailData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -399,7 +396,6 @@
 				9CEC9B44229646D000D08D90 /* Contact+Property.swift in Sources */,
 				9CEC9B4122962DCF00D08D90 /* Contact.swift in Sources */,
 				9C5B5A7222956FA7006CA17A /* ContactTableViewCell.swift in Sources */,
-				9C61DF42229719AC00B140D7 /* DetailData.swift in Sources */,
 				9C61DF402297121400B140D7 /* DetailModel.swift in Sources */,
 				9C1C787D22944E0600227047 /* AppDelegate.swift in Sources */,
 				9C1C78B92294C20800227047 /* MainViewController.swift in Sources */,
