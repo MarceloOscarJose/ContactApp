@@ -36,12 +36,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        if let detailViewController = delegate as? DetailViewController {
-            tableView.reloadRows(at: [indexPath], with: .automatic)
-
-            splitViewController?.showDetailViewController(detailViewController, sender: nil)
-            detailViewController.updateDetail(contactData: filteredContactsData[indexPath.section][indexPath.item])
-        }
+        splitViewController?.showDetailViewController(detailViewController, sender: nil)
+        detailViewController.updateDetail(contactData: filteredContactsData[indexPath.section][indexPath.item])
     }
 }

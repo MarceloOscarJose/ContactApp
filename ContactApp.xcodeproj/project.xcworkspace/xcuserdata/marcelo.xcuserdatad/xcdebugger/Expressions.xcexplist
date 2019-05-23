@@ -14,6 +14,14 @@
          contextName = "Contact.__allocating_init(from:):Contact+CoreDataClass.swift">
       </ContextState>
       <ContextState
+         contextName = "closure #1 in ListViewController.tableView(_:didSelectRowAt:):ListViewController+TableView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "$0.isKind(of: DetailViewController.self)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "PersistenceManager.fetchById&lt;A&gt;(_:idKey:id:):PersistenceManager.swift">
          <PersistentStrings>
             <PersistentString

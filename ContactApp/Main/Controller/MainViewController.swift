@@ -12,6 +12,7 @@ class MainViewController: UISplitViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.preferredDisplayMode = .allVisible
         self.delegate = self
     }
 }
