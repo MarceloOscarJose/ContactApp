@@ -12,13 +12,16 @@ import PXStickyHeaderCollectionView
 class DetailViewController: UIViewController, ContactSelectDelegate {
 
     // IBOutlets
-    var containerView: PXStickyHeaderCollectionView!
-    let headerView = DetailHeaderView()
-
     @IBOutlet weak var deleteButton: UIButton!
 
+    // Collection view
+    var containerView: PXStickyHeaderCollectionView!
+    let headerView = DetailHeaderView()
     let detailFieldtCellIdentifier = "DetailCollectionViewCell"
 
+    // Data vars
+    var delegate: ContactDetailDelegate!
+    let model = DetailModel()
     var contactData: Contact!
     var detaildata: [DetailData] = []
 
@@ -40,19 +43,34 @@ class DetailViewController: UIViewController, ContactSelectDelegate {
         NSLayoutConstraint(item: containerView!, attribute: .bottom, relatedBy: .equal, toItem: deleteButton, attribute: .top, multiplier: 1, constant: 0).isActive = true
 
         containerView.collectionView.register(UINib(nibName: detailFieldtCellIdentifier, bundle: .main), forCellWithReuseIdentifier: detailFieldtCellIdentifier)
-
         containerView.delegate = self
         containerView.dataSource = self
     }
 
     func updateDetail(contactData: Contact) {
         self.contactData = contactData
-        self.detaildata = DetailModel().parseContactEntity(contact: contactData)
-
+        self.detaildata = model.parseContactEntity(contact: contactData)
         headerView.updateHeader(firstName: contactData.firstName, lastName: contactData.lastName)
+
         containerView.collectionView.reloadData()
     }
 
     @IBAction func deleteAction(_ sender: Any) {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+
+        let deleteAction = UIAlertAction(title: "Delete contact", style: .destructive, handler: { action in
+            self.model.deleteContact(contact: self.contactData)
+            if let delegate = self.delegate {
+                delegate.contactDeleted()
+            }
+        })
+        alert.addAction(deleteAction)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+        self.present(alert, animated: true)
     }
+}
+
+protocol ContactDetailDelegate: class {
+    func contactDeleted()
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListViewController: UIViewController {
+class ListViewController: UIViewController, ContactDetailDelegate {
 
     // IBOutlets
     @IBOutlet weak var contactTableView: UITableView!
@@ -64,6 +64,12 @@ class ListViewController: UIViewController {
 
     @objc func hideKeyboard() {
         searchController.searchBar.endEditing(true)
+    }
+
+    func contactDeleted() {
+        contactsData = model.initContacts()
+        filteredContactsData = contactsData
+        contactTableView.reloadData()
     }
 }
 
