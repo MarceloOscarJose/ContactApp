@@ -28,6 +28,19 @@ class DetailModel: NSObject {
 
         return detailData
     }
+
+    func deleteContact(contact: Contact) {
+        let backgroundContext = PersistenceManager.shared.persistentContainer.newBackgroundContext()
+
+        do {
+            if let contactData = PersistenceManager.shared.fetchById(Contact.self, idKey: "contactID", id: contact.contactID) {
+                backgroundContext.delete(contactData)
+                try backgroundContext.save()
+            }
+        } catch {
+            print(error)
+        }
+    }
 }
 
 struct DetailData {

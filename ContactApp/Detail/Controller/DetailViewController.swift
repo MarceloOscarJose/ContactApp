@@ -15,7 +15,7 @@ class DetailViewController: UIViewController, ContactSelectDelegate {
     var containerView: PXStickyHeaderCollectionView!
     let headerView = DetailHeaderView()
 
-    @IBOutlet weak var detailTableView: UITableView!
+    @IBOutlet weak var deleteButton: UIButton!
 
     let detailFieldtCellIdentifier = "DetailCollectionViewCell"
 
@@ -37,9 +37,12 @@ class DetailViewController: UIViewController, ContactSelectDelegate {
         NSLayoutConstraint(item: containerView!, attribute: .top, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .top, multiplier: 1, constant: 0).isActive = true
         NSLayoutConstraint(item: containerView!, attribute: .left, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .left, multiplier: 1, constant: 0).isActive = true
         NSLayoutConstraint(item: containerView!, attribute: .right, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .right, multiplier: 1, constant: 0).isActive = true
-        NSLayoutConstraint(item: containerView!, attribute: .bottom, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: containerView!, attribute: .bottom, relatedBy: .equal, toItem: deleteButton, attribute: .top, multiplier: 1, constant: 0).isActive = true
 
         containerView.collectionView.register(UINib(nibName: detailFieldtCellIdentifier, bundle: .main), forCellWithReuseIdentifier: detailFieldtCellIdentifier)
+
+        containerView.delegate = self
+        containerView.dataSource = self
     }
 
     func updateDetail(contactData: Contact) {
@@ -47,8 +50,10 @@ class DetailViewController: UIViewController, ContactSelectDelegate {
         self.detaildata = DetailModel().parseContactEntity(contact: contactData)
 
         headerView.updateHeader(firstName: contactData.firstName, lastName: contactData.lastName)
-        containerView.delegate = self
-        containerView.dataSource = self
+        containerView.collectionView.reloadData()
+    }
+
+    @IBAction func deleteAction(_ sender: Any) {
     }
 }
 

@@ -39,7 +39,7 @@ class DetailHeaderView: UIView {
         }
 
         let scaledFont = (25 * self.frame.height / initialHeight)
-        let fontSize = scaledFont < 18 ? 18 : scaledFont > 28 ? 28 : scaledFont
+        let fontSize = scaledFont < 18 ? 18 : scaledFont > 30 ? 30 : scaledFont
         titleLabel.font = UIFont(name: "HelveticaNeue-Bold", size: fontSize)
     }
 

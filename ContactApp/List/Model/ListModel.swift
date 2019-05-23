@@ -1,5 +1,5 @@
 //
-//  ContactModel.swift
+//  ListModel.swift
 //  ContactApp
 //
 //  Created by Marcelo José on 21/05/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ContactModel: NSObject {
+class ListModel: NSObject {
 
     let initilizedContactKey = ConfigManager.shared.config.initilizedContactKey
 
@@ -17,10 +17,7 @@ class ContactModel: NSObject {
             if let path = Bundle.main.path(forResource: "Contacts", ofType: "json") {
                 do {
                     let data: Data = try NSData(contentsOfFile: path as String, options: NSData.ReadingOptions.dataReadingMapped) as Data
-                    let decoder = JSONDecoder()
-                    decoder.userInfo[.context] = PersistenceManager.shared.persistentContainer.viewContext
-
-                    let contacts = try decoder.decode([Contact].self, from: data)
+                    let contacts = try JSONDecoder().decode([ContactData].self, from: data)
 
                     for contact in contacts {
                         saveContact(contact: contact)
@@ -44,20 +41,7 @@ class ContactModel: NSObject {
         return UserDefaults.standard.bool(forKey: initilizedContactKey)
     }
 
-    func deleteContact(contact: Contact) {
-        let backgroundContext = PersistenceManager.shared.persistentContainer.newBackgroundContext()
-
-        do {
-            if let contactData = PersistenceManager.shared.fetchById(Contact.self, idKey: "contactID", id: contact.contactID) {
-                backgroundContext.delete(contactData)
-                try backgroundContext.save()
-            }
-        } catch {
-            print(error)
-        }
-    }
-
-    func saveContact(contact: Contact) {
+    func saveContact(contact: ContactData) {
         let backgroundContext = PersistenceManager.shared.persistentContainer.newBackgroundContext()
 
         do {

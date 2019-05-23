@@ -36,12 +36,36 @@
                     <view key="view" contentMode="scaleToFill" id="9m2-9P-0Bv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qO-Yq-ib7">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <color key="backgroundColor" red="0.96368048729630296" green="0.96368048729630296" blue="0.96368048729630296" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Jek-2A-75C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Delete contact">
+                                    <color key="titleColor" red="0.88242006301879883" green="0.19343847143104428" blue="0.19960224021259154" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteAction:" destination="BZ5-gG-4Ha" eventType="touchUpInside" id="oeP-dY-KYa"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4qO-Yq-ib7" firstAttribute="leading" secondItem="8EP-fe-MDl" secondAttribute="leading" id="1UQ-22-0ZV"/>
+                            <constraint firstItem="8EP-fe-MDl" firstAttribute="trailing" secondItem="4qO-Yq-ib7" secondAttribute="trailing" id="KC6-Iq-eKg"/>
+                            <constraint firstItem="4qO-Yq-ib7" firstAttribute="bottom" secondItem="8EP-fe-MDl" secondAttribute="bottom" id="eBp-ab-BQl"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8EP-fe-MDl"/>
                     </view>
                     <navigationItem key="navigationItem" id="Nkz-QE-AS0">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="FH4-JR-OUy"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="deleteButton" destination="4qO-Yq-ib7" id="k0R-x7-ASR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M4a-4B-b12" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

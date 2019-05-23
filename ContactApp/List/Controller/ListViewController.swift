@@ -29,7 +29,7 @@ class ListViewController: UIViewController {
 
     // Data vars
     var delegate: ContactSelectDelegate!
-    let model = ContactModel()
+    let model = ListModel()
     var contactsData: [[Contact]] = []
     var filteredContactsData: [[Contact]] = []
 

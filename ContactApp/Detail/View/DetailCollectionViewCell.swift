@@ -10,13 +10,14 @@ import UIKit
 
 class DetailCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var detailFieldLabel: UILabel!
+    @IBOutlet weak var detailFieldLabel: UITextView!
 
     let fieldNameAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 16) as Any]
     let fieldDataAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue", size: 16) as Any]
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        detailFieldLabel.dataDetectorTypes = .all
     }
 
     func updateCell(fieldName: String, fieldData: String) {
