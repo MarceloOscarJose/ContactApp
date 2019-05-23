@@ -20,7 +20,6 @@ class ContactTableViewCell: UITableViewCell {
     }
 
     func updateCell(firstName: String, lastName: String) {
-
         let finalText = NSMutableAttributedString(string: firstName, attributes: firstNameAttributes)
         finalText.append(NSAttributedString(string: " \(lastName)", attributes: lastNameAttributes))
         contactNameLabel.attributedText = finalText
