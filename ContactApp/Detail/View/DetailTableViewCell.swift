@@ -10,10 +10,18 @@ import UIKit
 
 class DetailTableViewCell: UITableViewCell {
 
-    let firstNameAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue", size: 16) as Any]
-    let lastNameAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 16) as Any]
+    @IBOutlet weak var detailFieldLabel: UILabel!
+
+    let fieldNameAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 16) as Any]
+    let fieldDataAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue", size: 16) as Any]
 
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+
+    func updateCell(fieldName: String, fieldData: String) {
+        let finalText = NSMutableAttributedString(string: fieldName, attributes: fieldNameAttributes)
+        finalText.append(NSAttributedString(string: ": \(fieldData)", attributes: fieldDataAttributes))
+        detailFieldLabel.attributedText = finalText
     }
 }

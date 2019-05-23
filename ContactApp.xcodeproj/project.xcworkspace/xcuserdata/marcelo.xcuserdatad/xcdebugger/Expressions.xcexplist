@@ -3,29 +3,30 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "ContactModel.initContacts():ContactModel.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "contact.firstName">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "ContactListViewController.tableView(_:cellForRowAt:):ContactListViewController.swift">
       </ContextState>
       <ContextState
          contextName = "Contact.__allocating_init(from:):Contact+CoreDataClass.swift">
       </ContextState>
       <ContextState
-         contextName = "closure #1 in ListViewController.tableView(_:didSelectRowAt:):ListViewController+TableView.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "$0.isKind(of: DetailViewController.self)">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "ContactAppTests.testContactModel():ContactAppTests.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DetailViewController.tableView(_:cellForRowAt:):DetailViewController.swift">
       </ContextState>
       <ContextState
          contextName = "PersistenceManager.fetchById&lt;A&gt;(_:idKey:id:):PersistenceManager.swift">
          <PersistentStrings>
             <PersistentString
                value = "String(describing: objectType)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DetailModel.parseContactEntity(contact:):DetailModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "dataModel">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -41,13 +42,23 @@
          contextName = "ContactModel.saveContact(contact:):ContactModel.swift">
       </ContextState>
       <ContextState
+         contextName = "closure #1 in ListViewController.tableView(_:didSelectRowAt:):ListViewController+TableView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "$0.isKind(of: DetailViewController.self)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ContactListViewController.searchBar(_:textDidChange:):ContactListViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "ContactListViewController.tableView(_:cellForRowAt:):ContactListViewController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "ContactAppTests.testContactModel():ContactAppTests.swift">
+         contextName = "ContactModel.initContacts():ContactModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "contact.firstName">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>

@@ -60,6 +60,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8EP-fe-MDl"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Nkz-QE-AS0">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="FH4-JR-OUy"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="detailTableView" destination="9rf-rm-0Em" id="7Yk-s4-hic"/>
                         <outlet property="fullNameLabel" destination="tVu-9K-FyX" id="Tnc-wC-kDf"/>
