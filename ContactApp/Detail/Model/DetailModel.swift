@@ -11,8 +11,6 @@ import UIKit
 class DetailModel: NSObject {
 
     var detailData: [DetailData] = [
-        DetailData(key: "firstName", name: "First name", value: ""),
-        DetailData(key: "lastName", name: "Last name", value: ""),
         DetailData(key: "phoneNumber", name: "Phone", value: ""),
         DetailData(key: "streetAddress1", name: "Address line 1", value: ""),
         DetailData(key: "streetAddress2", name: "Address line 2", value: ""),

@@ -36,27 +36,12 @@
                     <view key="view" contentMode="scaleToFill" id="9m2-9P-0Bv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9rf-rm-0Em">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="8EP-fe-MDl" firstAttribute="bottom" secondItem="9rf-rm-0Em" secondAttribute="bottom" id="GCI-dC-kCK"/>
-                            <constraint firstItem="8EP-fe-MDl" firstAttribute="trailing" secondItem="9rf-rm-0Em" secondAttribute="trailing" id="LWw-cv-37B"/>
-                            <constraint firstItem="9rf-rm-0Em" firstAttribute="leading" secondItem="8EP-fe-MDl" secondAttribute="leading" id="YQu-8j-CIN"/>
-                            <constraint firstItem="9rf-rm-0Em" firstAttribute="top" secondItem="8EP-fe-MDl" secondAttribute="top" id="jcy-DH-hjj"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8EP-fe-MDl"/>
                     </view>
                     <navigationItem key="navigationItem" id="Nkz-QE-AS0">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="FH4-JR-OUy"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="detailTableView" destination="9rf-rm-0Em" id="7Yk-s4-hic"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M4a-4B-b12" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
