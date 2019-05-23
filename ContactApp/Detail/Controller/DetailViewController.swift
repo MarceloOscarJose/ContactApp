@@ -18,4 +18,8 @@ class DetailViewController: UIViewController, ContactSelectionDelegate {
     func setupControls() {
         navigationItem.largeTitleDisplayMode = .never
     }
+
+    func updateDetail(contactData: Contact) {
+        
+    }
 }

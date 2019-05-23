@@ -10,10 +10,10 @@ import UIKit
 
 class ContactModel: NSObject {
 
-    let initContactKey = ConfigManager.shared.config.initContacsKey
+    let initilizedContactKey = ConfigManager.shared.config.initilizedContactKey
 
     func initContacts() -> [[Contact]] {
-        if !shouldSaveInitContacts() {
+        if !shouldInitilizeContacts() {
             if let path = Bundle.main.path(forResource: "Contacts", ofType: "json") {
                 do {
                     let data: Data = try NSData(contentsOfFile: path as String, options: NSData.ReadingOptions.dataReadingMapped) as Data
@@ -26,7 +26,7 @@ class ContactModel: NSObject {
                         saveContact(contact: contact)
                     }
 
-                    changeInitContactsProperty(value: true)
+                    changeInitalizedContacts(value: true)
                 } catch let error {
                     print(error)
                 }
@@ -36,12 +36,12 @@ class ContactModel: NSObject {
         return getContacts()
     }
 
-    func changeInitContactsProperty(value: Bool) {
-        UserDefaults.standard.set(value, forKey: initContactKey)
+    func changeInitalizedContacts(value: Bool) {
+        UserDefaults.standard.set(value, forKey: initilizedContactKey)
     }
 
-    func shouldSaveInitContacts() -> Bool {
-        return UserDefaults.standard.bool(forKey: initContactKey)
+    func shouldInitilizeContacts() -> Bool {
+        return UserDefaults.standard.bool(forKey: initilizedContactKey)
     }
 
     func deleteContact(contact: Contact) {

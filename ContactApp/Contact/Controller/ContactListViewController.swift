@@ -12,7 +12,7 @@ class ContactListViewController: UIViewController {
 
     // IBOutlets
     @IBOutlet weak var contactTableView: UITableView!
-    
+
     // SearchBar
     lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
@@ -29,7 +29,6 @@ class ContactListViewController: UIViewController {
 
     // Data vars
     var delegate: ContactSelectionDelegate!
-    let contactListScopes = ConfigManager.shared.config.contactListScopes
     let model = ContactModel()
     var contactsData: [[Contact]] = []
     var filteredContactsData: [[Contact]] = []
@@ -98,16 +97,10 @@ extension ContactListViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         if let detailViewController = delegate as? DetailViewController {
-            //postsModel.setReadedPost(index: indexPath.item)
-            //let postData = postsModel.posts[indexPath.item]
-
-            //let cell = tableView.cellForRow(at: indexPath) as! MasterTableViewCell
-            //cell.readed = true
-    
             tableView.reloadRows(at: [indexPath], with: .automatic)
 
             splitViewController?.showDetailViewController(detailViewController, sender: nil)
-            //detailViewController.postSelected(postData: postData)
+            detailViewController.updateDetail(contactData: filteredContactsData[indexPath.section][indexPath.item])
         }
     }
 }

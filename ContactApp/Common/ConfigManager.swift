@@ -30,6 +30,5 @@ class ConfigManager: NSObject {
 }
 
 struct ConfigData: Codable {
-    var initContacsKey: String
-    var contactListScopes: [String]
+    var initilizedContactKey: String
 }
