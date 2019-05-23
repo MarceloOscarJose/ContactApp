@@ -133,6 +133,7 @@
 				9C1C78A02294591D00227047 /* Resources */,
 				9C1C787C22944E0600227047 /* AppDelegate.swift */,
 				9C5B5A742295738A006CA17A /* ConfigManager.swift */,
+				9C1C78B22294BB6C00227047 /* PersistenceManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -151,7 +152,8 @@
 		9C1C78A12294593900227047 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9C1C78B22294BB6C00227047 /* PersistenceManager.swift */,
+				9CEC9B3F22962DCF00D08D90 /* Contact.swift */,
+				9CEC9B43229646D000D08D90 /* Contact+Property.swift */,
 				9C1C788322944E0600227047 /* ContactApp.xcdatamodeld */,
 			);
 			path = Model;
@@ -170,8 +172,6 @@
 		9C1C78A522945C3000227047 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9CEC9B3F22962DCF00D08D90 /* Contact.swift */,
-				9CEC9B43229646D000D08D90 /* Contact+Property.swift */,
 				9C1C78B02294B9A100227047 /* ContactModel.swift */,
 			);
 			path = Model;
