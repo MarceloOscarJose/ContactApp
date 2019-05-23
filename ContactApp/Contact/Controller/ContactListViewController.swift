@@ -31,8 +31,8 @@ class ContactListViewController: UIViewController {
     var delegate: ContactSelectionDelegate!
     let contactListScopes = ConfigManager.shared.config.contactListScopes
     let model = ContactModel()
-    var contactsData: [[ContactDataModel]] = []
-    var filteredContactsData: [[ContactDataModel]] = []
+    var contactsData: [[Contact]] = []
+    var filteredContactsData: [[Contact]] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,7 +121,7 @@ extension ContactListViewController: UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if !searchText.isEmpty {
-            filteredContactsData = contactsData.compactMap { (value: [ContactDataModel]) -> [ContactDataModel] in
+            filteredContactsData = contactsData.compactMap { (value: [Contact]) -> [Contact] in
                 return value.filter({ (contact) -> Bool in
                     let searchText = searchText.lowercased()
                     return contact.lastName.lowercased().contains(searchText) || contact.firstName.lowercased().contains(searchText)

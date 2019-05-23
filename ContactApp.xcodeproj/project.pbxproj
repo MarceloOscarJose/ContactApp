@@ -15,7 +15,6 @@
 		9C1C789522944E0700227047 /* ContactAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1C789422944E0700227047 /* ContactAppTests.swift */; };
 		9C1C78AB22945DD600227047 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1C78AA22945DD600227047 /* DetailViewController.swift */; };
 		9C1C78AD22945F4500227047 /* Contacts.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C1C78AC22945F4500227047 /* Contacts.json */; };
-		9C1C78AF2294AE3500227047 /* ContactDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1C78AE2294AE3500227047 /* ContactDataModel.swift */; };
 		9C1C78B12294B9A100227047 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1C78B02294B9A100227047 /* ContactModel.swift */; };
 		9C1C78B32294BB6C00227047 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1C78B22294BB6C00227047 /* PersistenceManager.swift */; };
 		9C1C78B72294BF9F00227047 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1C78B62294BF9F00227047 /* ContactListViewController.swift */; };
@@ -27,6 +26,8 @@
 		9CEC9B3A22958F8500D08D90 /* ContactHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC9B3822958F8500D08D90 /* ContactHeaderTableViewCell.swift */; };
 		9CEC9B3B22958F8500D08D90 /* ContactHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CEC9B3922958F8500D08D90 /* ContactHeaderTableViewCell.xib */; };
 		9CEC9B3E2295986B00D08D90 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC9B3D2295986B00D08D90 /* UIColor.swift */; };
+		9CEC9B4122962DCF00D08D90 /* Contact+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC9B3F22962DCF00D08D90 /* Contact+CoreDataClass.swift */; };
+		9CEC9B4222962DCF00D08D90 /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC9B4022962DCF00D08D90 /* Contact+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +53,6 @@
 		9C1C789622944E0700227047 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C1C78AA22945DD600227047 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9C1C78AC22945F4500227047 /* Contacts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contacts.json; sourceTree = "<group>"; };
-		9C1C78AE2294AE3500227047 /* ContactDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDataModel.swift; sourceTree = "<group>"; };
 		9C1C78B02294B9A100227047 /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
 		9C1C78B22294BB6C00227047 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		9C1C78B62294BF9F00227047 /* ContactListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +64,8 @@
 		9CEC9B3822958F8500D08D90 /* ContactHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		9CEC9B3922958F8500D08D90 /* ContactHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		9CEC9B3D2295986B00D08D90 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		9CEC9B3F22962DCF00D08D90 /* Contact+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9CEC9B4022962DCF00D08D90 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,7 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				9C1C78B02294B9A100227047 /* ContactModel.swift */,
-				9C1C78AE2294AE3500227047 /* ContactDataModel.swift */,
+				9CEC9B3F22962DCF00D08D90 /* Contact+CoreDataClass.swift */,
+				9CEC9B4022962DCF00D08D90 /* Contact+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -349,13 +352,14 @@
 			files = (
 				9C1C788522944E0600227047 /* ContactApp.xcdatamodeld in Sources */,
 				9CEC9B3E2295986B00D08D90 /* UIColor.swift in Sources */,
+				9CEC9B4222962DCF00D08D90 /* Contact+CoreDataProperties.swift in Sources */,
 				9C1C78B72294BF9F00227047 /* ContactListViewController.swift in Sources */,
 				9C1C78B32294BB6C00227047 /* PersistenceManager.swift in Sources */,
 				9C5B5A752295738A006CA17A /* ConfigManager.swift in Sources */,
 				9C1C78AB22945DD600227047 /* DetailViewController.swift in Sources */,
 				9CEC9B3A22958F8500D08D90 /* ContactHeaderTableViewCell.swift in Sources */,
 				9C1C78B12294B9A100227047 /* ContactModel.swift in Sources */,
-				9C1C78AF2294AE3500227047 /* ContactDataModel.swift in Sources */,
+				9CEC9B4122962DCF00D08D90 /* Contact+CoreDataClass.swift in Sources */,
 				9C5B5A7222956FA7006CA17A /* ContactTableViewCell.swift in Sources */,
 				9C1C787D22944E0600227047 /* AppDelegate.swift in Sources */,
 				9C1C78B92294C20800227047 /* MainViewController.swift in Sources */,

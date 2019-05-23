@@ -3,12 +3,15 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "closure #1 in closure #1 in ContactListViewController.searchBar(_:textDidChange:):ContactListViewController.swift">
+         contextName = "ContactModel.initContacts():ContactModel.swift">
          <PersistentStrings>
             <PersistentString
-               value = "fullName.contains(searchText.lowercased())">
+               value = "contact.firstName">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Contact.__allocating_init(from:):Contact+CoreDataClass.swift">
       </ContextState>
       <ContextState
          contextName = "PersistenceManager.fetchById&lt;A&gt;(_:idKey:id:):PersistenceManager.swift">
@@ -17,6 +20,17 @@
                value = "String(describing: objectType)">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in ContactListViewController.searchBar(_:textDidChange:):ContactListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "fullName.contains(searchText.lowercased())">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ContactModel.saveContact(contact:):ContactModel.swift">
       </ContextState>
       <ContextState
          contextName = "ContactListViewController.searchBar(_:textDidChange:):ContactListViewController.swift">

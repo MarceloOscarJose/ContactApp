@@ -12,17 +12,21 @@ class ContactModel: NSObject {
 
     let initContactKey = ConfigManager.shared.config.initContacsKey
 
-    func initContacts() -> [[ContactDataModel]] {
+    func initContacts() -> [[Contact]] {
         if !shouldSaveInitContacts() {
-            changeInitContactsProperty(value: true)
             if let path = Bundle.main.path(forResource: "Contacts", ofType: "json") {
                 do {
                     let data: Data = try NSData(contentsOfFile: path as String, options: NSData.ReadingOptions.dataReadingMapped) as Data
-                    let contacts = try JSONDecoder().decode([ContactDataModel].self, from: data)
+                    let decoder = JSONDecoder()
+                    decoder.userInfo[.context] = PersistenceManager.shared.persistentContainer.viewContext
+
+                    let contacts = try decoder.decode([Contact].self, from: data)
 
                     for contact in contacts {
                         saveContact(contact: contact)
                     }
+
+                    changeInitContactsProperty(value: true)
                 } catch let error {
                     print(error)
                 }
@@ -40,7 +44,7 @@ class ContactModel: NSObject {
         return UserDefaults.standard.bool(forKey: initContactKey)
     }
 
-    func deleteContact(contact: ContactDataModel) {
+    func deleteContact(contact: Contact) {
         let backgroundContext = PersistenceManager.shared.persistentContainer.viewContext
 
         do {
@@ -53,39 +57,39 @@ class ContactModel: NSObject {
         }
     }
 
-    func saveContact(contact: ContactDataModel) {
-        let backgroundContext = PersistenceManager.shared.persistentContainer.viewContext
+    func saveContact(contact: Contact) {
+        let backgroundContext = PersistenceManager.shared.persistentContainer.newBackgroundContext()
 
-        let contactId = UUID().uuidString
         do {
-            let contactEntity = Contact(context: backgroundContext)
-            contactEntity.contactID = contactId
-            contactEntity.firstName = contact.firstName
-            contactEntity.lastName = contact.lastName
-            contactEntity.phoneNumber = contact.phoneNumber
-            contactEntity.streetAddress1 = contact.streetAddress1
-            contactEntity.streetAddress2 = contact.streetAddress2
-            contactEntity.city = contact.city
-            contactEntity.state = contact.state
-            contactEntity.zipCode = contact.zipCode
-            contactEntity.didSave()
+            let newContact = Contact(context: backgroundContext)
+            newContact.contactID = UUID().uuidString
+            newContact.firstName = contact.firstName
+            newContact.lastName = contact.lastName
+            newContact.phoneNumber = contact.phoneNumber
+            newContact.streetAddress1 = contact.streetAddress1
+            newContact.streetAddress2 = contact.streetAddress2
+            newContact.state = contact.state
+            newContact.city = contact.city
+            newContact.zipCode = contact.zipCode
+            newContact.didSave()
+
             try backgroundContext.save()
         } catch {
             print(error)
         }
     }
 
-    func getContacts() -> [[ContactDataModel]] {
-        var dataModelContacts: [String: [ContactDataModel]] = [:]
+    func getContacts() -> [[Contact]] {
+        var dataModelContacts: [String: [Contact]] = [:]
 
         if let contacts = PersistenceManager.shared.fetch(Contact.self, sortBy: "lastName", ascending: true) {
             for contact in contacts {
-                if let contactlastname = contact.lastName, let contactSection = contactlastname.first {
+                if let contactSection = contact.lastName.first {
                     if var keyContacts = dataModelContacts[String(contactSection)] {
-                        keyContacts.append(ContactDataModel(contact: contact))
+                        keyContacts.append(contact)
                         dataModelContacts.updateValue(keyContacts, forKey: String(contactSection))
                     } else {
-                        dataModelContacts.updateValue([ContactDataModel(contact: contact)], forKey: String(contactSection))
+                        dataModelContacts.updateValue([contact], forKey: String(contactSection))
                     }
                 }
             }
@@ -93,7 +97,7 @@ class ContactModel: NSObject {
 
         let sortedData = dataModelContacts.sorted { (aDic, bDic) -> Bool in
             return aDic.key < bDic.key
-        }.compactMap { (key: String, value: [ContactDataModel]) -> [ContactDataModel] in
+        }.compactMap { (key: String, value: [Contact]) -> [Contact] in
             return value
         }
 
