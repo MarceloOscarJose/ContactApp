@@ -12,14 +12,12 @@ class ContactListViewController: UIViewController {
 
     // IBOutlets
     @IBOutlet weak var contactTableView: UITableView!
-
+    
     // SearchBar
     lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.dimsBackgroundDuringPresentation = false
-        searchController.searchBar.scopeButtonTitles = ConfigManager.shared.config.contactListScopes
         searchController.searchBar.tintColor = UIColor.ligthBlue
-        searchController.searchBar.showsScopeBar = true
         searchController.searchBar.searchBarStyle = .minimal
         searchController.searchBar.placeholder = "Search contacts"
         return searchController
@@ -30,6 +28,7 @@ class ContactListViewController: UIViewController {
     let contactHeaderCellIdentifier = "ContactHeaderTableViewCell"
 
     // Data vars
+    let contactListScopes = ConfigManager.shared.config.contactListScopes
     let model = ContactModel()
     var contactsData: [[ContactDataModel]] = []
     var filteredContactsData: [[ContactDataModel]] = []
@@ -52,6 +51,7 @@ class ContactListViewController: UIViewController {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         gesture.cancelsTouchesInView = false
 
+        definesPresentationContext = true
         contactTableView.delegate = self
         contactTableView.dataSource = self
         contactTableView.rowHeight = 50

@@ -4,7 +4,7 @@
 <dict>
 	<key>contactListScopes</key>
 	<array>
-		<string>A -F</string>
+		<string>A - F</string>
 		<string>G - M</string>
 		<string>N - T</string>
 		<string>U - Z</string>

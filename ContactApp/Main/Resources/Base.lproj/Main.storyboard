@@ -59,10 +59,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="djv-c6-oQM" firstAttribute="top" secondItem="pLG-Bk-JC5" secondAttribute="top" id="5ZE-tV-kfk"/>
                             <constraint firstItem="djv-c6-oQM" firstAttribute="trailing" secondItem="pLG-Bk-JC5" secondAttribute="trailing" id="Bh1-qh-IpI"/>
                             <constraint firstItem="djv-c6-oQM" firstAttribute="leading" secondItem="pLG-Bk-JC5" secondAttribute="leading" id="Jmd-3E-7Tf"/>
-                            <constraint firstItem="djv-c6-oQM" firstAttribute="bottom" secondItem="pLG-Bk-JC5" secondAttribute="bottom" id="VvA-hD-FoA"/>
+                            <constraint firstItem="djv-c6-oQM" firstAttribute="top" secondItem="pLG-Bk-JC5" secondAttribute="top" id="e3O-QS-NBG"/>
+                            <constraint firstItem="pLG-Bk-JC5" firstAttribute="bottom" secondItem="djv-c6-oQM" secondAttribute="bottom" id="yxt-R8-svm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pLG-Bk-JC5"/>
                     </view>
