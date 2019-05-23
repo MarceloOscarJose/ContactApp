@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PXStickyHeaderCollectionView
 
 class DetailViewController: UIViewController, ContactSelectDelegate {
 
@@ -15,6 +16,7 @@ class DetailViewController: UIViewController, ContactSelectDelegate {
     @IBOutlet weak var detailTableView: UITableView!
 
     let detailFieldtCellIdentifier = "DetailTableViewCell"
+    let detailHeaderCellIdentifier = "DetailHeaderTableViewCell"
 
     var contactData: Contact!
     var detaildata: [DetailData] = []
@@ -30,10 +32,10 @@ class DetailViewController: UIViewController, ContactSelectDelegate {
         detailTableView.dataSource = self
         detailTableView.rowHeight = 50
         detailTableView.register(UINib(nibName: detailFieldtCellIdentifier, bundle: .main), forCellReuseIdentifier: detailFieldtCellIdentifier)
+        detailTableView.register(UINib(nibName: detailHeaderCellIdentifier, bundle: .main), forCellReuseIdentifier: detailHeaderCellIdentifier)
     }
 
     func updateDetail(contactData: Contact) {
-        fullNameLabel.text = "\(contactData.firstName) \(contactData.lastName)"
         self.contactData = contactData
         self.detaildata = DetailModel().parseContactEntity(contact: contactData)
         detailTableView.reloadData()
@@ -42,8 +44,22 @@ class DetailViewController: UIViewController, ContactSelectDelegate {
 
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
 
+    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 100
+    }
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: detailHeaderCellIdentifier) as! DetailHeaderTableViewCell
+        cell.updateCell(firstName: contactData.firstName, lastName: contactData.lastName)
+        return cell
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

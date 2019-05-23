@@ -38,38 +38,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9rf-rm-0Em">
-                                <rect key="frame" x="0.0" y="173" width="414" height="689"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2GH-hq-fS2">
-                                <rect key="frame" x="0.0" y="88" width="414" height="85"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVu-9K-FyX">
-                                        <rect key="frame" x="10" y="0.0" width="394" height="85"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="tVu-9K-FyX" firstAttribute="top" secondItem="2GH-hq-fS2" secondAttribute="top" id="2wN-rw-swz"/>
-                                    <constraint firstAttribute="bottom" secondItem="tVu-9K-FyX" secondAttribute="bottom" id="ZCR-eF-RSo"/>
-                                    <constraint firstItem="tVu-9K-FyX" firstAttribute="leading" secondItem="2GH-hq-fS2" secondAttribute="leading" constant="10" id="gGo-k3-XZx"/>
-                                    <constraint firstAttribute="trailing" secondItem="tVu-9K-FyX" secondAttribute="trailing" constant="10" id="m0o-Yq-zds"/>
-                                    <constraint firstAttribute="height" constant="85" id="mq1-mR-77b"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="8EP-fe-MDl" firstAttribute="bottom" secondItem="9rf-rm-0Em" secondAttribute="bottom" id="GCI-dC-kCK"/>
-                            <constraint firstItem="2GH-hq-fS2" firstAttribute="top" secondItem="8EP-fe-MDl" secondAttribute="top" id="ID0-OZ-YMd"/>
                             <constraint firstItem="8EP-fe-MDl" firstAttribute="trailing" secondItem="9rf-rm-0Em" secondAttribute="trailing" id="LWw-cv-37B"/>
-                            <constraint firstItem="9rf-rm-0Em" firstAttribute="top" secondItem="2GH-hq-fS2" secondAttribute="bottom" id="Y51-Wi-9hy"/>
                             <constraint firstItem="9rf-rm-0Em" firstAttribute="leading" secondItem="8EP-fe-MDl" secondAttribute="leading" id="YQu-8j-CIN"/>
-                            <constraint firstItem="2GH-hq-fS2" firstAttribute="leading" secondItem="8EP-fe-MDl" secondAttribute="leading" id="eT1-Jz-dUm"/>
-                            <constraint firstItem="2GH-hq-fS2" firstAttribute="trailing" secondItem="8EP-fe-MDl" secondAttribute="trailing" id="tPc-8l-x2e"/>
+                            <constraint firstItem="9rf-rm-0Em" firstAttribute="top" secondItem="8EP-fe-MDl" secondAttribute="top" id="jcy-DH-hjj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8EP-fe-MDl"/>
                     </view>
@@ -78,7 +56,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="detailTableView" destination="9rf-rm-0Em" id="7Yk-s4-hic"/>
-                        <outlet property="fullNameLabel" destination="tVu-9K-FyX" id="Tnc-wC-kDf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M4a-4B-b12" userLabel="First Responder" sceneMemberID="firstResponder"/>
