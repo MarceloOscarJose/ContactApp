@@ -17,7 +17,7 @@ class DetailViewController: UIViewController, ContactSelectDelegate {
     let detailFieldtCellIdentifier = "DetailTableViewCell"
 
     var contactData: Contact!
-    let model = DetailModel()
+    var detaildata: [DetailData] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +35,7 @@ class DetailViewController: UIViewController, ContactSelectDelegate {
     func updateDetail(contactData: Contact) {
         fullNameLabel.text = "\(contactData.firstName) \(contactData.lastName)"
         self.contactData = contactData
+        self.detaildata = DetailModel().parseContactEntity(contact: contactData)
         detailTableView.reloadData()
     }
 }
@@ -46,14 +47,12 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return detaildata.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: detailFieldtCellIdentifier, for: indexPath) as! DetailTableViewCell
-
-        let contact = model.parseContactEntity(contact: contactData)
-        cell.updateCell(fieldName: contact[indexPath.item].name, fieldData: contact[indexPath.item].value)
+        cell.updateCell(fieldName: detaildata[indexPath.item].name, fieldData: detaildata[indexPath.item].value)
         return cell
     }
 }

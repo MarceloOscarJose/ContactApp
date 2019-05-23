@@ -10,28 +10,24 @@ import UIKit
 
 class DetailModel: NSObject {
 
-    let fieldNames: [Int: (key: String, name: String)] = [
-        0: (key: "firstName", name: "First Name"),
-        1: (key: "lastName", name: "Last Name"),
-        2: (key: "phoneNumber", name: "Phone"),
-        3: (key: "streetAddress1", name: "Address line 1"),
-        4: (key: "streetAddress2", name: "Address line 2"),
-        5: (key: "city", name: "City"),
-        6: (key: "state", name: "State"),
-        7: (key: "zipCode", name: "Zip code")
+    var detailData: [DetailData] = [
+        DetailData(key: "firstName", name: "First name", value: ""),
+        DetailData(key: "lastName", name: "Last name", value: ""),
+        DetailData(key: "phoneNumber", name: "Phone", value: ""),
+        DetailData(key: "streetAddress1", name: "Address line 1", value: ""),
+        DetailData(key: "streetAddress2", name: "Address line 2", value: ""),
+        DetailData(key: "city", name: "City", value: ""),
+        DetailData(key: "state", name: "State", value: ""),
+        DetailData(key: "zipCode", name: "Zip code", value: "")
     ]
 
-    func parseContactEntity(contact: Contact) -> [(name: String, value: String)] {
+    func parseContactEntity(contact: Contact) -> [DetailData] {
 
-        var dataModel: [(name: String, value: String)] = []
-
-        for i in 0...7 {
-            guard let key = fieldNames[i] else { return [] }
-
+        for (index, key) in detailData.enumerated() {
             let value = contact.value(forKey: key.key)  as! String
-            dataModel.append((name: key.name, value: value))
+            detailData[index].value = value
         }
 
-        return dataModel
+        return detailData
     }
 }
