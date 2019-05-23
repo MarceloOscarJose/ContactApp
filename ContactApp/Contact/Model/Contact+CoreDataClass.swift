@@ -19,10 +19,6 @@ public class Contact: NSManagedObject, Codable {
     }
 
     required convenience public init(from decoder: Decoder) throws {
-        /*guard let context = decoder.userInfo[.context] as? NSManagedObjectContext else {
-            throw ContactDecodeError.contextNotFound
-        }*/
-
         let entity = Contact(entity: Contact.entity(), insertInto: nil)
         self.init(entity: entity.entity, insertInto: nil)
 
