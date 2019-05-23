@@ -27,6 +27,7 @@
 		9C61DF4B2297509C00B140D7 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C61DF492297509C00B140D7 /* DetailCollectionViewCell.swift */; };
 		9C61DF4C2297509C00B140D7 /* DetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C61DF4A2297509C00B140D7 /* DetailCollectionViewCell.xib */; };
 		9C61DF4F2297591200B140D7 /* ContactData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C61DF4E2297591200B140D7 /* ContactData.swift */; };
+		9C61DF51229763F500B140D7 /* DetailViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C61DF50229763F500B140D7 /* DetailViewController+CollectionView.swift */; };
 		9CEC9B3A22958F8500D08D90 /* ContactHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC9B3822958F8500D08D90 /* ContactHeaderTableViewCell.swift */; };
 		9CEC9B3B22958F8500D08D90 /* ContactHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CEC9B3922958F8500D08D90 /* ContactHeaderTableViewCell.xib */; };
 		9CEC9B3E2295986B00D08D90 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC9B3D2295986B00D08D90 /* UIColor.swift */; };
@@ -79,6 +80,7 @@
 		9C61DF492297509C00B140D7 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		9C61DF4A2297509C00B140D7 /* DetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCollectionViewCell.xib; sourceTree = "<group>"; };
 		9C61DF4E2297591200B140D7 /* ContactData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactData.swift; sourceTree = "<group>"; };
+		9C61DF50229763F500B140D7 /* DetailViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		9CEC9B3822958F8500D08D90 /* ContactHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		9CEC9B3922958F8500D08D90 /* ContactHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		9CEC9B3D2295986B00D08D90 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				9CEC9B492296597300D08D90 /* DetailViewController.swift */,
+				9C61DF50229763F500B140D7 /* DetailViewController+CollectionView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				9C1C78B32294BB6C00227047 /* PersistenceManager.swift in Sources */,
 				9C5B5A752295738A006CA17A /* ConfigManager.swift in Sources */,
 				9CEC9B4B2296597300D08D90 /* DetailViewController.swift in Sources */,
+				9C61DF51229763F500B140D7 /* DetailViewController+CollectionView.swift in Sources */,
 				9CEC9B3A22958F8500D08D90 /* ContactHeaderTableViewCell.swift in Sources */,
 				9C61DF48229727B100B140D7 /* DetailHeaderView.swift in Sources */,
 				9CEC9B4622964E6800D08D90 /* ListViewController+TableView.swift in Sources */,
