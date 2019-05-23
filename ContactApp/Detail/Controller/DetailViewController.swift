@@ -8,9 +8,14 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, ContactSelectionDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupControls()
+    }
+
+    func setupControls() {
+        navigationItem.largeTitleDisplayMode = .never
     }
 }

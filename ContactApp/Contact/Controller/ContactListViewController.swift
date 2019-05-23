@@ -28,6 +28,7 @@ class ContactListViewController: UIViewController {
     let contactHeaderCellIdentifier = "ContactHeaderTableViewCell"
 
     // Data vars
+    var delegate: ContactSelectionDelegate!
     let contactListScopes = ConfigManager.shared.config.contactListScopes
     let model = ContactModel()
     var contactsData: [[ContactDataModel]] = []
@@ -93,6 +94,22 @@ extension ContactListViewController: UITableViewDelegate, UITableViewDataSource 
         cell.updateCell(firstName: contact.firstName, lastName: contact.lastName)
         return cell
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        if let detailViewController = delegate as? DetailViewController {
+            //postsModel.setReadedPost(index: indexPath.item)
+            //let postData = postsModel.posts[indexPath.item]
+
+            //let cell = tableView.cellForRow(at: indexPath) as! MasterTableViewCell
+            //cell.readed = true
+    
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+
+            splitViewController?.showDetailViewController(detailViewController, sender: nil)
+            //detailViewController.postSelected(postData: postData)
+        }
+    }
 }
 
 extension ContactListViewController: UISearchBarDelegate {
@@ -116,4 +133,7 @@ extension ContactListViewController: UISearchBarDelegate {
 
         contactTableView.reloadData()
     }
+}
+
+protocol ContactSelectionDelegate: class {
 }
