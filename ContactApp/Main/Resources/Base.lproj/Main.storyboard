@@ -27,7 +27,47 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KaM-U6-aW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="349" y="-95"/>
+            <point key="canvasLocation" x="348" y="-309"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="9nm-ND-BdF">
+            <objects>
+                <viewController id="BZ5-gG-4Ha" customClass="DetailViewController" customModule="ContactApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9m2-9P-0Bv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVu-9K-FyX">
+                                <rect key="frame" x="10" y="108" width="394" height="0.0"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9rf-rm-0Em">
+                                <rect key="frame" x="0.0" y="118" width="414" height="744"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8EP-fe-MDl" firstAttribute="trailing" secondItem="tVu-9K-FyX" secondAttribute="trailing" constant="10" id="0MR-g0-6pH"/>
+                            <constraint firstItem="tVu-9K-FyX" firstAttribute="top" secondItem="8EP-fe-MDl" secondAttribute="top" constant="20" id="D6v-99-cE3"/>
+                            <constraint firstItem="8EP-fe-MDl" firstAttribute="bottom" secondItem="9rf-rm-0Em" secondAttribute="bottom" id="GCI-dC-kCK"/>
+                            <constraint firstItem="8EP-fe-MDl" firstAttribute="trailing" secondItem="9rf-rm-0Em" secondAttribute="trailing" id="LWw-cv-37B"/>
+                            <constraint firstItem="9rf-rm-0Em" firstAttribute="leading" secondItem="8EP-fe-MDl" secondAttribute="leading" id="YQu-8j-CIN"/>
+                            <constraint firstItem="tVu-9K-FyX" firstAttribute="leading" secondItem="8EP-fe-MDl" secondAttribute="leading" constant="10" id="nqk-f3-j5L"/>
+                            <constraint firstItem="9rf-rm-0Em" firstAttribute="top" secondItem="tVu-9K-FyX" secondAttribute="bottom" constant="10" id="rzr-Po-ZGq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8EP-fe-MDl"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailTableView" destination="9rf-rm-0Em" id="7Yk-s4-hic"/>
+                        <outlet property="fullNameLabel" destination="tVu-9K-FyX" id="Tnc-wC-kDf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M4a-4B-b12" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="348" y="348"/>
         </scene>
         <!--Contacts-->
         <scene sceneID="RjK-6F-W7Z">
@@ -60,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15h-M5-vFA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1136" y="-95"/>
+            <point key="canvasLocation" x="1167" y="-309"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="6xs-If-f7F">
@@ -68,6 +108,7 @@
                 <splitViewController id="gFJ-nX-JJp" customClass="MainViewController" customModule="ContactApp" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="rvK-Le-9oY" kind="relationship" relationship="masterViewController" id="K6x-Yp-6PA"/>
+                        <segue destination="BZ5-gG-4Ha" kind="relationship" relationship="detailViewController" id="zlS-hu-C6P"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZl-v5-jvM" userLabel="First Responder" sceneMemberID="firstResponder"/>

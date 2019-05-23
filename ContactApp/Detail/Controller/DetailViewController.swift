@@ -8,28 +8,39 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, ContactSelectDelegate {
 
+    // IBOutlets
     @IBOutlet weak var fullNameLabel: UILabel!
-
-    // Data vars
-    var contactData: Contact!
+    @IBOutlet weak var detailTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupControls()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        fullNameLabel.text = contactData.firstName
-    }
-
     func setupControls() {
         navigationItem.largeTitleDisplayMode = .never
+        detailTableView.delegate = self
+        detailTableView.dataSource = self
     }
 
     func updateDetail(contactData: Contact) {
-        self.contactData = contactData
+        fullNameLabel.text = "\(contactData.firstName) \(contactData.lastName)"
+    }
+}
+
+extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
     }
 }

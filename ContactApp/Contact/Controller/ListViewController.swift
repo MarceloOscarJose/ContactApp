@@ -28,10 +28,10 @@ class ListViewController: UIViewController {
     let contactHeaderCellIdentifier = "ContactHeaderTableViewCell"
 
     // Data vars
+    var delegate: ContactSelectDelegate!
     let model = ContactModel()
     var contactsData: [[Contact]] = []
     var filteredContactsData: [[Contact]] = []
-    let detailViewController = DetailViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,4 +65,8 @@ class ListViewController: UIViewController {
     @objc func hideKeyboard() {
         searchController.searchBar.endEditing(true)
     }
+}
+
+protocol ContactSelectDelegate {
+    
 }
