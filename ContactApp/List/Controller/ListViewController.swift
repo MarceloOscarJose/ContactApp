@@ -71,8 +71,9 @@ class ListViewController: UIViewController, ContactDetailDelegate {
         searchController.searchBar.endEditing(true)
     }
 
-    func contactUpdated() {
+    func contactUpdated(contactData: Contact) {
         getContacts()
+        showContactDetail(contactData: contactData)
     }
 
     func contactDeleted() {
@@ -90,12 +91,24 @@ class ListViewController: UIViewController, ContactDetailDelegate {
             }
         }
     }
+
+    func showContactDetail(contactData: Contact) {
+        if let detailViewController = self.delegate as? DetailViewController {
+            DispatchQueue.main.async {
+                detailViewController.delegate = self
+                self.delegate.updateDetail(contactData: contactData)
+                let navController = UINavigationController(rootViewController: detailViewController)
+                self.splitViewController?.showDetailViewController(navController, sender: nil)
+            }
+        }
+    }
 }
 
 extension ListViewController: EditViewControllerDelegate {
 
     func didSaveContact(contactData: Contact) {
         getContacts()
+        showContactDetail(contactData: contactData)
     }
 }
 

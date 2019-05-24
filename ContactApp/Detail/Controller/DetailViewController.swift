@@ -96,12 +96,12 @@ extension DetailViewController: EditViewControllerDelegate {
         updateDetail(contactData: contactData)
 
         if let delegate = self.delegate {
-            delegate.contactUpdated()
+            delegate.contactUpdated(contactData: contactData)
         }
     }
 }
 
 protocol ContactDetailDelegate: class {
-    func contactUpdated()
+    func contactUpdated(contactData: Contact)
     func contactDeleted()
 }
