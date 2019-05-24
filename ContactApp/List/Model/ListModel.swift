@@ -14,20 +14,13 @@ class ListModel: GeneralModel {
 
     func initContacts() -> [[Contact]] {
         if !shouldInitilizeContacts() {
-            if let path = Bundle.main.path(forResource: "Contacts", ofType: "json") {
-                do {
-                    let data: Data = try NSData(contentsOfFile: path as String, options: NSData.ReadingOptions.dataReadingMapped) as Data
-                    let contacts = try JSONDecoder().decode([ContactCodable].self, from: data)
+            let contacts = ConfigManager.shared.getInitContacts()
 
-                    for contact in contacts {
-                        saveContact(contact: contact)
-                    }
-
-                    changeInitalizedContacts(value: true)
-                } catch let error {
-                    print(error)
-                }
+            for contact in contacts {
+                saveContact(contact: contact)
             }
+
+            changeInitalizedContacts(value: true)
         }
 
         return getContacts()
