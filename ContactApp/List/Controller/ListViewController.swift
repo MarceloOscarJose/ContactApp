@@ -85,6 +85,8 @@ class ListViewController: UIViewController, ContactDetailDelegate {
             if let editViewController = segue.destination as? EditViewController {
                 editViewController.contactData = model.createNewContact()
                 editViewController.delegate = self
+
+                //self.splitViewController?.showDetailViewController(editViewController, sender: nil)
             }
         }
     }

@@ -13,7 +13,7 @@ class DetailViewController: UIViewController, ContactListDelegate {
 
     // IBOutlets
     @IBOutlet weak var deleteButton: UIButton!
-
+    
     // Collection view
     var containerView: PXStickyHeaderCollectionView!
     let headerView = DetailHeaderView()
@@ -45,6 +45,8 @@ class DetailViewController: UIViewController, ContactListDelegate {
         containerView.collectionView.register(UINib(nibName: detailFieldtCellIdentifier, bundle: .main), forCellWithReuseIdentifier: detailFieldtCellIdentifier)
         containerView.delegate = self
         containerView.dataSource = self
+
+        toggleControls(false)
     }
 
     func updateDetail(contactData: Contact) {
@@ -52,6 +54,12 @@ class DetailViewController: UIViewController, ContactListDelegate {
         self.detaildata = model.parseContactEntity(contact: contactData)
         headerView.updateHeader(firstName: contactData.firstName, lastName: contactData.lastName)
         self.containerView.collectionView.reloadData()
+        toggleControls(true)
+    }
+
+    func toggleControls(_ show: Bool) {
+        self.containerView.isHidden = !show
+        self.deleteButton.isHidden = !show
     }
 
     @IBAction func deleteAction(_ sender: Any) {
@@ -61,6 +69,7 @@ class DetailViewController: UIViewController, ContactListDelegate {
             self.model.deleteContact(contact: self.contactData)
             if let delegate = self.delegate {
                 delegate.contactDeleted()
+                self.toggleControls(false)
             }
         })
 
