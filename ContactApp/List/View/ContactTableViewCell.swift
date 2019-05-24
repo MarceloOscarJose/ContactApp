@@ -28,13 +28,13 @@ class ContactTableViewCell: UITableViewCell {
 
         if let searchText = searchText, phoneNumber.contains(searchText) {
             finalText.append(NSAttributedString(string: "\nPhone number: ", attributes: phoneAttributes))
-            finalText.append(searchStringInData(searchText: searchText, fieldValue: phoneNumber))
+            finalText.append(searchStringInRange(searchText: searchText, fieldValue: phoneNumber))
         }
 
         contactNameLabel.attributedText = finalText
     }
 
-    func searchStringInData(searchText: String, fieldValue: String) -> NSAttributedString {
+    func searchStringInRange(searchText: String, fieldValue: String) -> NSAttributedString {
         let finalString = NSMutableAttributedString(string: fieldValue, attributes: phoneAttributes)
 
         let range = (fieldValue as NSString).range(of: searchText)
