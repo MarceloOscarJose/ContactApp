@@ -19,7 +19,7 @@ class ListViewController: UIViewController, ContactDetailDelegate {
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.tintColor = UIColor.ligthBlue
         searchController.searchBar.searchBarStyle = .minimal
-        searchController.searchBar.placeholder = "Search contacts"
+        searchController.searchBar.placeholder = "Search by name or phone"
         return searchController
     }()
 

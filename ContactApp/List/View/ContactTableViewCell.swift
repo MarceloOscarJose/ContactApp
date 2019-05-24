@@ -15,6 +15,9 @@ class ContactTableViewCell: UITableViewCell {
     let firstNameAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue", size: 16) as Any]
     let lastNameAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 16) as Any]
 
+    let phoneAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue", size: 14) as Any]
+    let phoneBoldAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 14) as Any]
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -31,11 +34,11 @@ class ContactTableViewCell: UITableViewCell {
     }
 
     func searchStringInData(searchText: String, fieldValue: String) -> NSAttributedString {
-        let finalString = NSMutableAttributedString(string: "\nPhone number:", attributes: firstNameAttributes)
+        let finalString = NSMutableAttributedString(string: "\nPhone number: ", attributes: phoneAttributes)
 
         let range = (fieldValue as NSString).range(of: searchText)
-        let phoneText = NSMutableAttributedString(string: fieldValue, attributes: firstNameAttributes)
-        phoneText.setAttributes(lastNameAttributes, range: range)
+        let phoneText = NSMutableAttributedString(string: fieldValue, attributes: phoneAttributes)
+        phoneText.setAttributes(phoneBoldAttributes, range: range)
         finalString.append(phoneText)
 
         return finalString
