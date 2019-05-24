@@ -24,8 +24,9 @@ class EditModel: NSObject {
     func parseContactEntity(contact: Contact) -> [EditData] {
 
         for (index, key) in editData.enumerated() {
-            let value = contact.value(forKey: key.key)  as! String
-            editData[index].value = value
+            if let value = contact.value(forKey: key.key) as? String {
+                editData[index].value = value
+            }
         }
 
         return editData

@@ -79,6 +79,26 @@ class ListViewController: UIViewController, ContactDetailDelegate {
         getContacts()
         self.navigationController?.popViewController(animated: true)
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addContact" {
+            if let editViewController = segue.destination as? EditViewController {
+                editViewController.contactData = model.createNewContact()
+                editViewController.delegate = self
+            }
+        }
+    }
+}
+
+extension ListViewController: EditViewControllerDelegate {
+
+    func didSaveContact(contactData: Contact) {
+    }
+
+    func didAddContact() {
+        getContacts()
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 protocol ContactListDelegate {

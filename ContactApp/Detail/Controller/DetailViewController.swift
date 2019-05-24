@@ -83,6 +83,9 @@ class DetailViewController: UIViewController, ContactListDelegate {
 
 extension DetailViewController: EditViewControllerDelegate {
 
+    func didAddContact() {
+    }
+
     func didSaveContact(contactData: Contact) {
         updateDetail(contactData: contactData)
 

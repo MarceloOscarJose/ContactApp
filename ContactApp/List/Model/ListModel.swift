@@ -42,10 +42,10 @@ class ListModel: NSObject {
     }
 
     func saveContact(contact: ContactData) {
-        let backgroundContext = PersistenceManager.shared.persistentContainer.newBackgroundContext()
+        let context = PersistenceManager.shared.persistentContainer.viewContext
 
         do {
-            let newContact = Contact(context: backgroundContext)
+            let newContact = Contact(context: context)
             newContact.contactID = UUID().uuidString
             newContact.firstName = contact.firstName
             newContact.lastName = contact.lastName
@@ -57,10 +57,26 @@ class ListModel: NSObject {
             newContact.zipCode = contact.zipCode
             newContact.didSave()
 
-            try backgroundContext.save()
+            try context.save()
         } catch {
             print(error)
         }
+    }
+
+    func createNewContact() -> Contact {
+        let context = PersistenceManager.shared.persistentContainer.viewContext
+        let newContact = Contact(context: context)
+        newContact.contactID = UUID().uuidString
+        newContact.firstName = ""
+        newContact.lastName = ""
+        newContact.phoneNumber = ""
+        newContact.streetAddress1 = ""
+        newContact.streetAddress2 = ""
+        newContact.city = ""
+        newContact.state = ""
+        newContact.zipCode = ""
+
+        return newContact
     }
 
     func getContacts() -> [[Contact]] {
@@ -68,7 +84,7 @@ class ListModel: NSObject {
 
         if let contacts = PersistenceManager.shared.fetch(Contact.self, sortBy: ["lastName", "firstName"], ascending: true) {
             for contact in contacts {
-                if let contactSection = contact.lastName.first {
+                if let contactSection = contact.lastName.first?.uppercased() {
                     if var keyContacts = dataModelContacts[String(contactSection)] {
                         keyContacts.append(contact)
                         dataModelContacts.updateValue(keyContacts, forKey: String(contactSection))
