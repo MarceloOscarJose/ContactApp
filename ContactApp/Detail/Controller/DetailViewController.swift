@@ -55,9 +55,9 @@ class DetailViewController: UIViewController, ContactListDelegate {
     }
 
     @IBAction func deleteAction(_ sender: Any) {
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Delete contact", message: "Are you sure ?", preferredStyle: .alert)
 
-        let deleteAction = UIAlertAction(title: "Delete contact", style: .destructive, handler: { action in
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { action in
             self.model.deleteContact(contact: self.contactData)
             if let delegate = self.delegate {
                 delegate.contactDeleted()
@@ -66,8 +66,6 @@ class DetailViewController: UIViewController, ContactListDelegate {
 
         alert.addAction(deleteAction)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-
-        // Here show constraints issue. It's an iOS bug
         self.present(alert, animated: true)
     }
 
