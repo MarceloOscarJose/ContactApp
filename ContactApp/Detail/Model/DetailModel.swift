@@ -8,25 +8,16 @@
 
 import UIKit
 
-class DetailModel: NSObject {
+class DetailModel: GeneralModel {
 
-    var detailData: [DetailData] = [
-        DetailData(key: "phoneNumber", name: "Phone", value: ""),
-        DetailData(key: "streetAddress1", name: "Address line 1", value: ""),
-        DetailData(key: "streetAddress2", name: "Address line 2", value: ""),
-        DetailData(key: "city", name: "City", value: ""),
-        DetailData(key: "state", name: "State", value: ""),
-        DetailData(key: "zipCode", name: "Zip code", value: "")
-    ]
+    func parseContactEntity(contact: Contact) -> [ContactData] {
 
-    func parseContactEntity(contact: Contact) -> [DetailData] {
-
-        for (index, key) in detailData.enumerated() {
+        for (index, key) in contactDataFields.enumerated() {
             let value = contact.value(forKey: key.key) as! String
-            detailData[index].value = value
+            contactDataFields[index].value = value
         }
 
-        return detailData
+        return contactDataFields
     }
 
     func deleteContact(contact: Contact) {
@@ -41,10 +32,4 @@ class DetailModel: NSObject {
             print(error)
         }
     }
-}
-
-struct DetailData {
-    let key: String
-    let name: String
-    var value: String
 }

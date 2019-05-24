@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ListModel: NSObject {
+class ListModel: GeneralModel {
 
     let initilizedContactKey = ConfigManager.shared.config.initilizedContactKey
 
@@ -17,7 +17,7 @@ class ListModel: NSObject {
             if let path = Bundle.main.path(forResource: "Contacts", ofType: "json") {
                 do {
                     let data: Data = try NSData(contentsOfFile: path as String, options: NSData.ReadingOptions.dataReadingMapped) as Data
-                    let contacts = try JSONDecoder().decode([ContactData].self, from: data)
+                    let contacts = try JSONDecoder().decode([ContactCodable].self, from: data)
 
                     for contact in contacts {
                         saveContact(contact: contact)
@@ -41,7 +41,7 @@ class ListModel: NSObject {
         return UserDefaults.standard.bool(forKey: initilizedContactKey)
     }
 
-    func saveContact(contact: ContactData) {
+    func saveContact(contact: ContactCodable) {
         let context = PersistenceManager.shared.persistentContainer.viewContext
 
         do {

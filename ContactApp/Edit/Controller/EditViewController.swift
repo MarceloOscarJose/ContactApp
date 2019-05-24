@@ -17,7 +17,7 @@ class EditViewController: UIViewController {
     var delegate: EditViewControllerDelegate!
     let editFieldtCellIdentifier = "EditFieldCollectionViewCell"
     let model = EditModel()
-    var editData: [EditData]!
+    var editData: [ContactData]!
     var contactData: Contact!
 
     override func viewDidLoad() {
@@ -58,37 +58,6 @@ class EditViewController: UIViewController {
     func getFieldValue(index: Int) -> String? {
         let cell = editFieldsCollectionView.cellForItem(at: IndexPath(item: index, section: 0)) as! EditFieldCollectionViewCell
         return cell.fieldValueTextView.text
-    }
-}
-
-extension EditViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-
-    public func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-
-    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return editData.count
-    }
-
-    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: editFieldtCellIdentifier, for: indexPath) as! EditFieldCollectionViewCell
-        let data = editData[indexPath.item]
-        cell.updateField(fieldName: data.name, fieldValue: data.value, contextType: data.contextType, keyboardType: data.keyboardType)
-        return cell
-    }
-
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let availableWidth = collectionView.frame.width
-        return CGSize(width: availableWidth, height: 50)
-    }
-
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    }
-
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
     }
 }
 

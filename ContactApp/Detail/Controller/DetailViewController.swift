@@ -23,7 +23,7 @@ class DetailViewController: UIViewController, ContactListDelegate {
     var delegate: ContactDetailDelegate!
     let model = DetailModel()
     var contactData: Contact!
-    var detaildata: [DetailData] = []
+    var detaildata: [ContactData] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
