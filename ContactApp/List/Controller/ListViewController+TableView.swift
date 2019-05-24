@@ -44,7 +44,6 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
                 let navController = UINavigationController(rootViewController: detailViewController)
                 self.splitViewController?.showDetailViewController(navController, sender: nil)
             }
-            
         }
     }
 }

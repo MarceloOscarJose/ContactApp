@@ -19,17 +19,43 @@ class ContactAppTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testContactModel() {
-        let model = ContactModel()
+    func testListModel() {
+        let model = ListModel()
+        let detailModel = DetailModel()
 
-        var contacts = model.getContacts()
-        for contact in contacts {
-            model.deleteContact(contact: contact)
+        var contactSections = model.getContacts()
+        for sections in contactSections {
+            for contact in sections {
+                detailModel.deleteContact(contact: contact)
+            }
         }
 
-        model.changeInitContactsProperty(value: false)
-        contacts = model.initContacts()
-        model.changeInitContactsProperty(value: true)
-        XCTAssert(contacts.count == 10)
+        model.changeInitalizedContacts(value: false)
+        contactSections = model.initContacts()
+        model.changeInitalizedContacts(value: true)
+        XCTAssert(contactSections.count == 8)
+        XCTAssert(contactSections[2].count == 3)
+    }
+
+    func testEditModel() {
+        let model = EditModel()
+        let detailModel = DetailModel()
+
+        let contact = Contact(context: PersistenceManager.shared.persistentContainer.viewContext)
+        contact.contactID = "123"
+        contact.firstName = "Tom"
+        contact.lastName = "Jackson"
+        contact.phoneNumber = "123456"
+        model.saveContact(contact: contact)
+
+        if let savedContact = PersistenceManager.shared.fetchById(Contact.self, idKey: "contactID", id: "123") {
+            XCTAssert(savedContact.contactID == "123")
+            XCTAssert(savedContact.firstName == "Tom")
+            XCTAssert(savedContact.lastName == "Jackson")
+            XCTAssert(savedContact.phoneNumber == "123456")
+            detailModel.deleteContact(contact: savedContact)
+        } else {
+            XCTAssert(false)
+        }
     }
 }
