@@ -82,11 +82,11 @@ class ListViewController: UIViewController, ContactDetailDelegate {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addContact" {
-            if let editViewController = segue.destination as? EditViewController {
-                editViewController.contactData = model.createNewContact()
-                editViewController.delegate = self
-
-                //self.splitViewController?.showDetailViewController(editViewController, sender: nil)
+            if let navigationController = segue.destination as? UINavigationController {
+                if let editViewController = navigationController.viewControllers.first as? EditViewController {
+                    editViewController.contactData = model.createNewContact()
+                    editViewController.delegate = self
+                }
             }
         }
     }

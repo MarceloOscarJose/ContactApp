@@ -58,9 +58,12 @@ class EditViewController: UIViewController {
         self.model.saveContact(contact: contactData)
         self.updateForm()
 
+        let alert = UIAlertController(title: "Saved", message: "The contact has been saved !", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+        self.present(alert, animated: true)
+
         if let delegate = self.delegate {
             delegate.didSaveContact(contactData: contactData)
-            self.navigationController?.popViewController(animated: true)
         }
     }
 }
