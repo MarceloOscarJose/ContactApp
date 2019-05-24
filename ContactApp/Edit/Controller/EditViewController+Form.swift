@@ -1,5 +1,5 @@
 //
-//  EditViewController+CollectionView.swift
+//  EditViewController+Form.swift
 //  ContactApp
 //
 //  Created by Marcelo José on 24/05/2019.
@@ -9,12 +9,15 @@
 import UIKit
 
 extension EditViewController {
+
     func updateForm() {
+
         editData = model.parseContactEntity(contact: contactData)
         var lastElement: UIView = editFormScrollView
 
         for values in editData {
             let row = EditFormFieldRow()
+            row.updateField(fieldName: values.name, fieldValue: values.value, contextType: values.contextType, keyboardType: values.keyboardType, required: values.required)
             editFormScrollView.addSubview(row)
 
             let top: NSLayoutConstraint.Attribute = lastElement == editFormScrollView ? .top : .bottom
@@ -24,9 +27,11 @@ extension EditViewController {
             NSLayoutConstraint(item: row, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 50).isActive = true
 
             lastElement = row
-            row.updateField(fieldName: values.name, fieldValue: values.value, contextType: values.contextType, keyboardType: values.keyboardType, required: values.required)
+            
             formFields.append(row)
         }
+
+        NSLayoutConstraint(item: lastElement, attribute: .bottom, relatedBy: .equal, toItem: editFormScrollView, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
     }
 
     func showFormErrorValidation() {
@@ -46,10 +51,12 @@ extension EditViewController {
         let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
 
         if notification.name == UIResponder.keyboardWillHideNotification {
-            bottomConstraint.constant = 1
+            editFormScrollView.contentInset = .zero
         } else {
-            bottomConstraint.constant = keyboardViewEndFrame.height - view.safeAreaInsets.bottom
+            editFormScrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height - view.safeAreaInsets.bottom, right: 0)
         }
+
+        editFormScrollView.scrollIndicatorInsets = editFormScrollView.contentInset
     }
 
     @objc func hideKeyboard() {
