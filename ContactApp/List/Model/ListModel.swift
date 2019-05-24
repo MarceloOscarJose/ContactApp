@@ -14,7 +14,7 @@ class ListModel: GeneralModel {
 
     func initContacts() -> [[Contact]] {
         if !shouldInitilizeContacts() {
-            let contacts = ConfigManager.shared.getInitContacts()
+            let contacts = getInitContacts()
 
             for contact in contacts {
                 saveContact(contact: contact)

@@ -27,20 +27,6 @@ class ConfigManager: NSObject {
             }
         }
     }
-
-    func getInitContacts() -> [ContactCodable] {
-        if let path = Bundle.main.path(forResource: "Contacts", ofType: "json") {
-            do {
-                let data: Data = try NSData(contentsOfFile: path as String, options: NSData.ReadingOptions.dataReadingMapped) as Data
-                let contacts = try JSONDecoder().decode([ContactCodable].self, from: data)
-                return contacts
-            } catch let error {
-                print(error)
-            }
-        }
-
-        return []
-    }
 }
 
 struct ConfigData: Codable {
