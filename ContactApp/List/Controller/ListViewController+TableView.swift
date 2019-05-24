@@ -31,7 +31,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: contactCellIdentifier, for: indexPath) as! ContactTableViewCell
         let contact = filteredContactsData[indexPath.section][indexPath.item]
-        cell.updateCell(firstName: contact.firstName, lastName: contact.lastName)
+        cell.updateCell(firstName: contact.firstName, lastName: contact.lastName, phoneNumber: contact.phoneNumber, searchText: searchController.searchBar.text)
         return cell
     }
 

@@ -20,7 +20,9 @@ extension ListViewController: UISearchBarDelegate {
             filteredContactsData = contactsData.compactMap { (value: [Contact]) -> [Contact] in
                 return value.filter({ (contact) -> Bool in
                     let searchText = searchText.lowercased()
-                    return contact.lastName.lowercased().contains(searchText) || contact.firstName.lowercased().contains(searchText)
+                    return contact.lastName.lowercased().contains(searchText)
+                        || contact.firstName.lowercased().contains(searchText)
+                        || contact.phoneNumber.lowercased().contains(searchText)
                 })
                 }.filter { $0.count > 0 }
         } else {

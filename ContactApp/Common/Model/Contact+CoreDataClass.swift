@@ -24,7 +24,7 @@ extension Contact {
     @NSManaged public var contactID: String
     @NSManaged public var firstName: String
     @NSManaged public var lastName: String
-    @NSManaged public var phoneNumber: String?
+    @NSManaged public var phoneNumber: String
     @NSManaged public var state: String?
     @NSManaged public var streetAddress1: String?
     @NSManaged public var streetAddress2: String?

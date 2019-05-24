@@ -19,9 +19,25 @@ class ContactTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
 
-    func updateCell(firstName: String, lastName: String) {
+    func updateCell(firstName: String, lastName: String, phoneNumber: String, searchText: String?) {
         let finalText = NSMutableAttributedString(string: firstName, attributes: firstNameAttributes)
         finalText.append(NSAttributedString(string: " \(lastName)", attributes: lastNameAttributes))
+
+        if let searchText = searchText, phoneNumber.contains(searchText) {
+            finalText.append(searchStringInData(searchText: searchText, fieldValue: phoneNumber))
+        }
+
         contactNameLabel.attributedText = finalText
+    }
+
+    func searchStringInData(searchText: String, fieldValue: String) -> NSAttributedString {
+        let finalString = NSMutableAttributedString(string: "\nPhone number:", attributes: firstNameAttributes)
+
+        let range = (fieldValue as NSString).range(of: searchText)
+        let phoneText = NSMutableAttributedString(string: fieldValue, attributes: firstNameAttributes)
+        phoneText.setAttributes(lastNameAttributes, range: range)
+        finalString.append(phoneText)
+
+        return finalString
     }
 }
