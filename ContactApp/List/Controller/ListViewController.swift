@@ -37,6 +37,7 @@ class ListViewController: UIViewController, ContactDetailDelegate {
         super.viewDidLoad()
         setupNavigationBar()
         setupControls()
+        getContacts()
     }
 
     func setupNavigationBar() {
@@ -58,8 +59,12 @@ class ListViewController: UIViewController, ContactDetailDelegate {
         contactTableView.addGestureRecognizer(gesture)
         contactTableView.register(UINib(nibName: contactCellIdentifier, bundle: .main), forCellReuseIdentifier: contactCellIdentifier)
         contactTableView.register(UINib(nibName: contactHeaderCellIdentifier, bundle: .main), forCellReuseIdentifier: contactHeaderCellIdentifier)
+    }
+
+    func getContacts() {
         contactsData = model.initContacts()
         filteredContactsData = contactsData
+        contactTableView.reloadData()
     }
 
     @objc func hideKeyboard() {
@@ -67,10 +72,12 @@ class ListViewController: UIViewController, ContactDetailDelegate {
     }
 
     func contactUpdated() {
+        getContacts()
+    }
+
+    func contactDeleted() {
+        getContacts()
         self.navigationController?.popViewController(animated: true)
-        contactsData = model.initContacts()
-        filteredContactsData = contactsData
-        contactTableView.reloadData()
     }
 }
 
