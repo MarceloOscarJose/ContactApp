@@ -77,7 +77,7 @@ class DetailViewController: UIViewController, ContactListDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editContact" {
             if let editViewController = segue.destination as? EditViewController {
-                editViewController.updateForm(contact: contactData)
+                editViewController.contactData = contactData
             }
         }
     }

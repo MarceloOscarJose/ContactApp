@@ -17,20 +17,23 @@ class EditViewController: UIViewController {
     let editFieldtCellIdentifier = "EditFieldCollectionViewCell"
     let model = EditModel()
     var editData: [EditData]!
+    var contactData: Contact!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupControls()
+        updateForm()
     }
 
     func setupControls() {
         navigationItem.largeTitleDisplayMode = .never
         editFieldsCollectionView.delegate = self
         editFieldsCollectionView.dataSource = self
+        editFieldsCollectionView.register(UINib(nibName: editFieldtCellIdentifier, bundle: .main), forCellWithReuseIdentifier: editFieldtCellIdentifier)
     }
 
-    func updateForm(contact: Contact) {
-        editData = model.parseContactEntity(contact: contact)
+    func updateForm() {
+        editData = model.parseContactEntity(contact: contactData)
         editFieldsCollectionView.reloadData()
     }
 }
@@ -47,7 +50,8 @@ extension EditViewController: UICollectionViewDataSource, UICollectionViewDelega
 
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: editFieldtCellIdentifier, for: indexPath) as! EditFieldCollectionViewCell
-        cell.updateField(fieldName: editData[indexPath.item].name, fieldValue: editData[indexPath.item].value)
+        let data = editData[indexPath.item]
+        cell.updateField(fieldName: data.name, fieldValue: data.value, placeHolder: data.placeHolder, contextType: data.contextType)
         return cell
     }
 

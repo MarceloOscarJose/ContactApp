@@ -17,8 +17,10 @@ class EditFieldCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
 
-    func updateField(fieldName: String, fieldValue: String) {
-        fieldNameLabel.text = fieldName
+    func updateField(fieldName: String, fieldValue: String, placeHolder: String, contextType: UITextContentType) {
+        fieldNameLabel.text = "\(fieldName):"
+        fieldValueTextView.textContentType = contextType
+        fieldValueTextView.placeholder = placeHolder
         fieldValueTextView.text = fieldValue
     }
 }
