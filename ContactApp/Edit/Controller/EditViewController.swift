@@ -11,9 +11,11 @@ import UIKit
 class EditViewController: UIViewController {
 
     // IBOutlets
-    @IBOutlet weak var editFieldsCollectionView: UICollectionView!
+    @IBOutlet weak var editFormScrollView: UIScrollView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-    
+
+    var formFields: [EditFormFieldRow] = []
+
     // Data vars
     var delegate: EditViewControllerDelegate!
     let editFieldtCellIdentifier = "EditFieldCollectionViewCell"
@@ -29,9 +31,10 @@ class EditViewController: UIViewController {
 
     func setupControls() {
         navigationItem.largeTitleDisplayMode = .never
-        editFieldsCollectionView.delegate = self
-        editFieldsCollectionView.dataSource = self
-        editFieldsCollectionView.register(UINib(nibName: editFieldtCellIdentifier, bundle: .main), forCellWithReuseIdentifier: editFieldtCellIdentifier)
+
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        gesture.cancelsTouchesInView = false
+        editFormScrollView.addGestureRecognizer(gesture)
 
         // Manage keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -41,19 +44,27 @@ class EditViewController: UIViewController {
 
     func updateForm() {
         editData = model.parseContactEntity(contact: contactData)
-        editFieldsCollectionView.reloadData()
-    }
+        var lastElement: UIView = editFormScrollView
 
-    @IBAction func saveContact(_ sender: Any) {
+        for values in editData {
+            let row = EditFormFieldRow()
+            editFormScrollView.addSubview(row)
 
-        self.view.endEditing(true)
+            let top: NSLayoutConstraint.Attribute = lastElement == editFormScrollView ? .top : .bottom
+            NSLayoutConstraint(item: row, attribute: .top, relatedBy: .equal, toItem: lastElement, attribute: top, multiplier: 1, constant: 0).isActive = true
+            NSLayoutConstraint(item: row, attribute: .leading, relatedBy: .equal, toItem: editFormScrollView, attribute: .leading, multiplier: 1, constant: 0).isActive = true
+            NSLayoutConstraint(item: row, attribute: .width, relatedBy: .equal, toItem: editFormScrollView, attribute: .width, multiplier: 1, constant: 0).isActive = true
+            NSLayoutConstraint(item: row, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 50).isActive = true
 
-        DispatchQueue.main.async {
-            self.performSave()
+            lastElement = row
+            row.updateField(fieldName: values.name, fieldValue: values.value, contextType: values.contextType, keyboardType: values.keyboardType, required: values.required)
+            formFields.append(row)
         }
     }
 
-    func performSave() {
+    @IBAction func saveContact(_ sender: Any) {
+        hideKeyboard()
+
         for (index, value) in editData.enumerated() {
             if let fieldValue = getFieldValue(index: index) {
                 if value.required && fieldValue == "" {
@@ -73,6 +84,10 @@ class EditViewController: UIViewController {
         }
     }
 
+    @objc func hideKeyboard() {
+        self.view.endEditing(true)
+    }
+
     func showFormErrorValidation() {
         let alert = UIAlertController(title: "Error", message: "You should complete all required fields", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
@@ -80,8 +95,7 @@ class EditViewController: UIViewController {
     }
 
     func getFieldValue(index: Int) -> String? {
-        let cell = editFieldsCollectionView.cellForItem(at: IndexPath(item: index, section: 0)) as! EditFieldCollectionViewCell
-        return cell.fieldValueTextView.text
+        return formFields[index].rowTextField.text
     }
 
     @objc func handleKeyboard(notification: Notification) {

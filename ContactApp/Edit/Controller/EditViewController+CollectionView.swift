@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension EditViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+/*extension EditViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -37,4 +37,4 @@ extension EditViewController: UICollectionViewDataSource, UICollectionViewDelega
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-}
+}*/
