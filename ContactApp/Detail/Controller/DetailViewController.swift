@@ -80,9 +80,11 @@ class DetailViewController: UIViewController, ContactListDelegate {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editContact" {
-            if let editViewController = segue.destination as? EditViewController {
-                editViewController.delegate = self
-                editViewController.contactData = contactData
+            if let navigationController = segue.destination as? UINavigationController {
+                if let editViewController = navigationController.viewControllers.first as? EditViewController {
+                    editViewController.delegate = self
+                    editViewController.contactData = contactData
+                }
             }
         }
     }
