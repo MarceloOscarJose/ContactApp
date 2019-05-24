@@ -42,26 +42,6 @@ class EditViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
 
-    func updateForm() {
-        editData = model.parseContactEntity(contact: contactData)
-        var lastElement: UIView = editFormScrollView
-
-        for values in editData {
-            let row = EditFormFieldRow()
-            editFormScrollView.addSubview(row)
-
-            let top: NSLayoutConstraint.Attribute = lastElement == editFormScrollView ? .top : .bottom
-            NSLayoutConstraint(item: row, attribute: .top, relatedBy: .equal, toItem: lastElement, attribute: top, multiplier: 1, constant: 0).isActive = true
-            NSLayoutConstraint(item: row, attribute: .leading, relatedBy: .equal, toItem: editFormScrollView, attribute: .leading, multiplier: 1, constant: 0).isActive = true
-            NSLayoutConstraint(item: row, attribute: .width, relatedBy: .equal, toItem: editFormScrollView, attribute: .width, multiplier: 1, constant: 0).isActive = true
-            NSLayoutConstraint(item: row, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 50).isActive = true
-
-            lastElement = row
-            row.updateField(fieldName: values.name, fieldValue: values.value, contextType: values.contextType, keyboardType: values.keyboardType, required: values.required)
-            formFields.append(row)
-        }
-    }
-
     @IBAction func saveContact(_ sender: Any) {
         hideKeyboard()
 
@@ -81,33 +61,6 @@ class EditViewController: UIViewController {
         if let delegate = self.delegate {
             delegate.didSaveContact(contactData: contactData)
             self.navigationController?.popViewController(animated: true)
-        }
-    }
-
-    @objc func hideKeyboard() {
-        self.view.endEditing(true)
-    }
-
-    func showFormErrorValidation() {
-        let alert = UIAlertController(title: "Error", message: "You should complete all required fields", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
-        self.present(alert, animated: true)
-    }
-
-    func getFieldValue(index: Int) -> String? {
-        return formFields[index].rowTextField.text
-    }
-
-    @objc func handleKeyboard(notification: Notification) {
-        guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
-
-        let keyboardScreenEndFrame = keyboardValue.cgRectValue
-        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
-
-        if notification.name == UIResponder.keyboardWillHideNotification {
-            bottomConstraint.constant = 1
-        } else {
-            bottomConstraint.constant = keyboardViewEndFrame.height - view.safeAreaInsets.bottom
         }
     }
 }

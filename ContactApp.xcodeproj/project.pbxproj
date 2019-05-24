@@ -30,7 +30,7 @@
 		9C61DF51229763F500B140D7 /* DetailViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C61DF50229763F500B140D7 /* DetailViewController+CollectionView.swift */; };
 		9C7FDBA8229779B80087644F /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7FDBA7229779B80087644F /* EditViewController.swift */; };
 		9C7FDBAA229779D30087644F /* EditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7FDBA9229779D30087644F /* EditModel.swift */; };
-		9CA3FB242298194D002D90E4 /* EditViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA3FB232298194D002D90E4 /* EditViewController+CollectionView.swift */; };
+		9CA3FB242298194D002D90E4 /* EditViewController+Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA3FB232298194D002D90E4 /* EditViewController+Form.swift */; };
 		9CA3FB26229819E8002D90E4 /* GeneralModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA3FB25229819E8002D90E4 /* GeneralModel.swift */; };
 		9CA3FB2822986EAD002D90E4 /* EditFormFieldRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA3FB2722986EAD002D90E4 /* EditFormFieldRow.swift */; };
 		9CEC9B3A22958F8500D08D90 /* ContactHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC9B3822958F8500D08D90 /* ContactHeaderTableViewCell.swift */; };
@@ -86,7 +86,7 @@
 		9C61DF50229763F500B140D7 /* DetailViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		9C7FDBA7229779B80087644F /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		9C7FDBA9229779D30087644F /* EditModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditModel.swift; sourceTree = "<group>"; };
-		9CA3FB232298194D002D90E4 /* EditViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditViewController+CollectionView.swift"; sourceTree = "<group>"; };
+		9CA3FB232298194D002D90E4 /* EditViewController+Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditViewController+Form.swift"; sourceTree = "<group>"; };
 		9CA3FB25229819E8002D90E4 /* GeneralModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralModel.swift; sourceTree = "<group>"; };
 		9CA3FB2722986EAD002D90E4 /* EditFormFieldRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFormFieldRow.swift; sourceTree = "<group>"; };
 		9CEC9B3822958F8500D08D90 /* ContactHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactHeaderTableViewCell.swift; sourceTree = "<group>"; };
@@ -310,7 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				9C7FDBA7229779B80087644F /* EditViewController.swift */,
-				9CA3FB232298194D002D90E4 /* EditViewController+CollectionView.swift */,
+				9CA3FB232298194D002D90E4 /* EditViewController+Form.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -549,7 +549,7 @@
 				9C61DF51229763F500B140D7 /* DetailViewController+CollectionView.swift in Sources */,
 				9CEC9B3A22958F8500D08D90 /* ContactHeaderTableViewCell.swift in Sources */,
 				9CA3FB26229819E8002D90E4 /* GeneralModel.swift in Sources */,
-				9CA3FB242298194D002D90E4 /* EditViewController+CollectionView.swift in Sources */,
+				9CA3FB242298194D002D90E4 /* EditViewController+Form.swift in Sources */,
 				9C61DF48229727B100B140D7 /* DetailHeaderView.swift in Sources */,
 				9CA3FB2822986EAD002D90E4 /* EditFormFieldRow.swift in Sources */,
 				9CEC9B4622964E6800D08D90 /* ListViewController+TableView.swift in Sources */,
