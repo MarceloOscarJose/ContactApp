@@ -18,6 +18,7 @@
 		9C1C78B32294BB6C00227047 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1C78B22294BB6C00227047 /* PersistenceManager.swift */; };
 		9C1C78B72294BF9F00227047 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1C78B62294BF9F00227047 /* ListViewController.swift */; };
 		9C1C78B92294C20800227047 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1C78B82294C20800227047 /* MainViewController.swift */; };
+		9C3DBF36229772E9004318B8 /* Contact+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3DBF34229772E9004318B8 /* Contact+CoreDataClass.swift */; };
 		9C5B5A7222956FA7006CA17A /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5B5A7022956FA7006CA17A /* ContactTableViewCell.swift */; };
 		9C5B5A7322956FA7006CA17A /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C5B5A7122956FA7006CA17A /* ContactTableViewCell.xib */; };
 		9C5B5A752295738A006CA17A /* ConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5B5A742295738A006CA17A /* ConfigManager.swift */; };
@@ -31,8 +32,6 @@
 		9CEC9B3A22958F8500D08D90 /* ContactHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC9B3822958F8500D08D90 /* ContactHeaderTableViewCell.swift */; };
 		9CEC9B3B22958F8500D08D90 /* ContactHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CEC9B3922958F8500D08D90 /* ContactHeaderTableViewCell.xib */; };
 		9CEC9B3E2295986B00D08D90 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC9B3D2295986B00D08D90 /* UIColor.swift */; };
-		9CEC9B4122962DCF00D08D90 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC9B3F22962DCF00D08D90 /* Contact.swift */; };
-		9CEC9B44229646D000D08D90 /* Contact+Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC9B43229646D000D08D90 /* Contact+Property.swift */; };
 		9CEC9B4622964E6800D08D90 /* ListViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC9B4522964E6800D08D90 /* ListViewController+TableView.swift */; };
 		9CEC9B4822964ED200D08D90 /* ListViewController+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC9B4722964ED200D08D90 /* ListViewController+SearchBar.swift */; };
 		9CEC9B4B2296597300D08D90 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC9B492296597300D08D90 /* DetailViewController.swift */; };
@@ -71,6 +70,7 @@
 		9C1C78B22294BB6C00227047 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		9C1C78B62294BF9F00227047 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		9C1C78B82294C20800227047 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		9C3DBF34229772E9004318B8 /* Contact+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9C5B5A7022956FA7006CA17A /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		9C5B5A7122956FA7006CA17A /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
 		9C5B5A742295738A006CA17A /* ConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigManager.swift; sourceTree = "<group>"; };
@@ -84,8 +84,6 @@
 		9CEC9B3822958F8500D08D90 /* ContactHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		9CEC9B3922958F8500D08D90 /* ContactHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		9CEC9B3D2295986B00D08D90 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		9CEC9B3F22962DCF00D08D90 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
-		9CEC9B43229646D000D08D90 /* Contact+Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+Property.swift"; sourceTree = "<group>"; };
 		9CEC9B4522964E6800D08D90 /* ListViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListViewController+TableView.swift"; sourceTree = "<group>"; };
 		9CEC9B4722964ED200D08D90 /* ListViewController+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListViewController+SearchBar.swift"; sourceTree = "<group>"; };
 		9CEC9B492296597300D08D90 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -191,8 +189,7 @@
 		9C1C78A12294593900227047 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9CEC9B3F22962DCF00D08D90 /* Contact.swift */,
-				9CEC9B43229646D000D08D90 /* Contact+Property.swift */,
+				9C3DBF34229772E9004318B8 /* Contact+CoreDataClass.swift */,
 				9C1C788322944E0600227047 /* ContactApp.xcdatamodeld */,
 			);
 			path = Model;
@@ -516,11 +513,10 @@
 				9C61DF48229727B100B140D7 /* DetailHeaderView.swift in Sources */,
 				9CEC9B4622964E6800D08D90 /* ListViewController+TableView.swift in Sources */,
 				9C1C78B12294B9A100227047 /* ListModel.swift in Sources */,
-				9CEC9B44229646D000D08D90 /* Contact+Property.swift in Sources */,
 				9C61DF4F2297591200B140D7 /* ContactData.swift in Sources */,
-				9CEC9B4122962DCF00D08D90 /* Contact.swift in Sources */,
 				9C5B5A7222956FA7006CA17A /* ContactTableViewCell.swift in Sources */,
 				9C61DF402297121400B140D7 /* DetailModel.swift in Sources */,
+				9C3DBF36229772E9004318B8 /* Contact+CoreDataClass.swift in Sources */,
 				9C1C787D22944E0600227047 /* AppDelegate.swift in Sources */,
 				9C1C78B92294C20800227047 /* MainViewController.swift in Sources */,
 			);

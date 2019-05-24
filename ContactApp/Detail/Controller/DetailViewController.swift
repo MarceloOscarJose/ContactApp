@@ -51,8 +51,7 @@ class DetailViewController: UIViewController, ContactSelectDelegate {
         self.contactData = contactData
         self.detaildata = model.parseContactEntity(contact: contactData)
         headerView.updateHeader(firstName: contactData.firstName, lastName: contactData.lastName)
-
-        containerView.collectionView.reloadData()
+        self.containerView.collectionView.reloadData()
     }
 
     @IBAction func deleteAction(_ sender: Any) {
