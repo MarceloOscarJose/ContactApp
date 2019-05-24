@@ -30,12 +30,12 @@ class DetailModel: NSObject {
     }
 
     func deleteContact(contact: Contact) {
-        let backgroundContext = PersistenceManager.shared.persistentContainer.newBackgroundContext()
+        let context = PersistenceManager.shared.persistentContainer.viewContext
 
         do {
             if let contactData = PersistenceManager.shared.fetchById(Contact.self, idKey: "contactID", id: contact.contactID) {
-                backgroundContext.delete(contactData)
-                try backgroundContext.save()
+                context.delete(contactData)
+                try context.save()
             }
         } catch {
             print(error)

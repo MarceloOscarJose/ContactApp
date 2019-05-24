@@ -62,11 +62,14 @@ class DetailViewController: UIViewController, ContactSelectDelegate {
             self.model.deleteContact(contact: self.contactData)
             if let delegate = self.delegate {
                 delegate.contactDeleted()
+                self.navigationController?.popViewController(animated: true)
             }
         })
+
         alert.addAction(deleteAction)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 
+        // Here show constraints issue. It's an iOS bug
         self.present(alert, animated: true)
     }
 }
