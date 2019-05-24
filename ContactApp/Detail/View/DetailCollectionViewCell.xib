@@ -27,7 +27,7 @@
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sB6-Pa-cP3">
-                        <rect key="frame" x="0.0" y="49" width="424" height="1"/>
+                        <rect key="frame" x="10" y="49" width="404" height="1"/>
                         <color key="backgroundColor" white="0.88242009132420074" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="M9l-17-Kmp"/>
@@ -40,9 +40,9 @@
                 <constraint firstItem="cuH-2h-4Rv" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="6Zf-In-0e1"/>
                 <constraint firstItem="cuH-2h-4Rv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Nc8-R7-2oD"/>
                 <constraint firstAttribute="bottom" secondItem="sB6-Pa-cP3" secondAttribute="bottom" id="Y26-H6-TaO"/>
-                <constraint firstItem="sB6-Pa-cP3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Y94-5O-nEV"/>
+                <constraint firstItem="sB6-Pa-cP3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Y94-5O-nEV"/>
                 <constraint firstAttribute="trailing" secondItem="cuH-2h-4Rv" secondAttribute="trailing" constant="10" id="pNV-pP-Elr"/>
-                <constraint firstAttribute="trailing" secondItem="sB6-Pa-cP3" secondAttribute="trailing" id="sXN-2M-feq"/>
+                <constraint firstAttribute="trailing" secondItem="sB6-Pa-cP3" secondAttribute="trailing" constant="10" id="sXN-2M-feq"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="424" height="78"/>

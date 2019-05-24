@@ -11,14 +11,14 @@ import UIKit
 class EditModel: NSObject {
 
     var editData: [EditData] = [
-        EditData(key: "firstName", name: "First name", placeHolder: "", contextType: .name, value: ""),
-        EditData(key: "lastName", name: "Last name", placeHolder: "", contextType: .name, value: ""),
-        EditData(key: "phoneNumber", name: "Phone", placeHolder: "", contextType: .telephoneNumber, value: ""),
-        EditData(key: "streetAddress1", name: "Address line 1", placeHolder: "", contextType: .streetAddressLine1, value: ""),
-        EditData(key: "streetAddress2", name: "Address line 2", placeHolder: "", contextType: .streetAddressLine2, value: ""),
-        EditData(key: "city", name: "City", placeHolder: "", contextType: .addressCity, value: ""),
-        EditData(key: "state", name: "State", placeHolder: "", contextType: .addressState, value: ""),
-        EditData(key: "zipCode", name: "Zip code", placeHolder: "", contextType: .postalCode, value: "")
+        EditData(key: "firstName", name: "First name", placeHolder: "", contextType: .name, keyboardType: .alphabet, value: ""),
+        EditData(key: "lastName", name: "Last name", placeHolder: "", contextType: .name, keyboardType: .alphabet, value: ""),
+        EditData(key: "phoneNumber", name: "Phone", placeHolder: "", contextType: .telephoneNumber, keyboardType: .phonePad, value: ""),
+        EditData(key: "streetAddress1", name: "Address line 1", placeHolder: "", contextType: .streetAddressLine1, keyboardType: .asciiCapable, value: ""),
+        EditData(key: "streetAddress2", name: "Address line 2", placeHolder: "", contextType: .streetAddressLine2, keyboardType: .asciiCapable, value: ""),
+        EditData(key: "city", name: "City", placeHolder: "", contextType: .addressCity, keyboardType: .asciiCapable, value: ""),
+        EditData(key: "state", name: "State", placeHolder: "", contextType: .addressState, keyboardType: .asciiCapable, value: ""),
+        EditData(key: "zipCode", name: "Zip code", placeHolder: "", contextType: .postalCode, keyboardType: .decimalPad, value: "")
     ]
 
     func parseContactEntity(contact: Contact) -> [EditData] {
@@ -37,5 +37,6 @@ struct EditData {
     let name: String
     let placeHolder: String
     let contextType: UITextContentType
+    let keyboardType: UIKeyboardType
     var value: String
 }

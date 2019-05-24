@@ -17,10 +17,27 @@ class EditFieldCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
 
-    func updateField(fieldName: String, fieldValue: String, placeHolder: String, contextType: UITextContentType) {
+    func updateField(fieldName: String, fieldValue: String, placeHolder: String, contextType: UITextContentType, keyboardType: UIKeyboardType) {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        gesture.cancelsTouchesInView = false
+        self.addGestureRecognizer(gesture)
+
         fieldNameLabel.text = "\(fieldName):"
         fieldValueTextView.textContentType = contextType
         fieldValueTextView.placeholder = placeHolder
         fieldValueTextView.text = fieldValue
+        fieldValueTextView.keyboardType = keyboardType
+        fieldValueTextView.delegate = self
+    }
+
+    @objc func hideKeyboard() {
+        fieldValueTextView.resignFirstResponder()
+    }
+}
+
+extension EditFieldCollectionViewCell: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.endEditing(true)
+        return false
     }
 }

@@ -36,6 +36,9 @@ class EditViewController: UIViewController {
         editData = model.parseContactEntity(contact: contactData)
         editFieldsCollectionView.reloadData()
     }
+
+    @IBAction func saveContact(_ sender: Any) {
+    }
 }
 
 extension EditViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -51,7 +54,7 @@ extension EditViewController: UICollectionViewDataSource, UICollectionViewDelega
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: editFieldtCellIdentifier, for: indexPath) as! EditFieldCollectionViewCell
         let data = editData[indexPath.item]
-        cell.updateField(fieldName: data.name, fieldValue: data.value, placeHolder: data.placeHolder, contextType: data.contextType)
+        cell.updateField(fieldName: data.name, fieldValue: data.value, placeHolder: data.placeHolder, contextType: data.contextType, keyboardType: data.keyboardType)
         return cell
     }
 

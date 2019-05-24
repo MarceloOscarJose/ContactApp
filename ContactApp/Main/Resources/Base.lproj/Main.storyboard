@@ -104,6 +104,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VnG-59-G9m"/>
                     </view>
+                    <navigationItem key="navigationItem" id="2oZ-r8-Udg">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="g47-x3-gEB">
+                            <connections>
+                                <action selector="saveContact:" destination="0Oi-FI-AOo" id="uFI-Re-2FW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="editFieldsCollectionView" destination="8yy-yS-KFp" id="baN-pP-Rzc"/>
                     </connections>

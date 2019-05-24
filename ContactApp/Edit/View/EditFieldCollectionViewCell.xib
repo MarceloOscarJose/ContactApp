@@ -25,17 +25,17 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="wxM-hM-rBn">
-                        <rect key="frame" x="59.5" y="0.0" width="290.5" height="49"/>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wxM-hM-rBn">
+                        <rect key="frame" x="59.5" y="12.5" width="290.5" height="25"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="49" id="aLZ-zt-D9u"/>
+                            <constraint firstAttribute="height" constant="25" id="nEe-eU-R15"/>
                         </constraints>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                     </textField>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z5P-OZ-sDe">
-                        <rect key="frame" x="10" y="49" width="340" height="1"/>
+                        <rect key="frame" x="59.5" y="37.5" width="290.5" height="1"/>
                         <color key="backgroundColor" red="0.77165954821000848" green="0.77165954821000848" blue="0.77165954821000848" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="xLI-fe-ycB"/>
@@ -45,13 +45,12 @@
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Z5P-OZ-sDe" secondAttribute="bottom" id="3PK-Lx-oy1"/>
-                <constraint firstItem="wxM-hM-rBn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="5dS-BB-ilD"/>
-                <constraint firstItem="Z5P-OZ-sDe" firstAttribute="top" secondItem="wxM-hM-rBn" secondAttribute="bottom" id="9fg-vi-cnm"/>
+                <constraint firstItem="wxM-hM-rBn" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="1Uw-cN-o4I"/>
+                <constraint firstItem="Z5P-OZ-sDe" firstAttribute="width" secondItem="wxM-hM-rBn" secondAttribute="width" id="HOT-vR-ctc"/>
+                <constraint firstItem="Z5P-OZ-sDe" firstAttribute="top" secondItem="wxM-hM-rBn" secondAttribute="bottom" id="Lf8-Ju-7cH"/>
                 <constraint firstItem="iiV-Ns-ghB" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="bB0-t8-7dp"/>
                 <constraint firstItem="wxM-hM-rBn" firstAttribute="leading" secondItem="iiV-Ns-ghB" secondAttribute="trailing" constant="10" id="dsX-IK-h5C"/>
                 <constraint firstItem="iiV-Ns-ghB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="nZK-lt-O61"/>
-                <constraint firstItem="Z5P-OZ-sDe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="tBa-zX-VBc"/>
                 <constraint firstAttribute="trailing" secondItem="wxM-hM-rBn" secondAttribute="trailing" constant="10" id="wdI-p8-Edo"/>
                 <constraint firstAttribute="trailing" secondItem="Z5P-OZ-sDe" secondAttribute="trailing" constant="10" id="wjb-gC-btR"/>
             </constraints>
