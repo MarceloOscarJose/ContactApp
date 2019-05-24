@@ -17,14 +17,14 @@ class EditFieldCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
 
-    func updateField(fieldName: String, fieldValue: String, placeHolder: String, contextType: UITextContentType, keyboardType: UIKeyboardType) {
+    func updateField(fieldName: String, fieldValue: String, contextType: UITextContentType, keyboardType: UIKeyboardType) {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         gesture.cancelsTouchesInView = false
         self.addGestureRecognizer(gesture)
 
         fieldNameLabel.text = "\(fieldName):"
         fieldValueTextView.textContentType = contextType
-        fieldValueTextView.placeholder = placeHolder
+        fieldValueTextView.placeholder = fieldName
         fieldValueTextView.text = fieldValue
         fieldValueTextView.keyboardType = keyboardType
         fieldValueTextView.delegate = self
