@@ -25,8 +25,8 @@ class GeneralModel: NSObject {
 struct ContactData {
     let key: String
     let name: String
-    let contextType: UITextContentType?
-    let keyboardType: UIKeyboardType?
+    let contextType: UITextContentType
+    let keyboardType: UIKeyboardType
     var value: String
 }
 
