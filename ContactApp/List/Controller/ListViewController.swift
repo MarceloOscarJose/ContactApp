@@ -93,11 +93,7 @@ class ListViewController: UIViewController, ContactDetailDelegate {
 extension ListViewController: EditViewControllerDelegate {
 
     func didSaveContact(contactData: Contact) {
-    }
-
-    func didAddContact() {
         getContacts()
-        self.navigationController?.popViewController(animated: true)
     }
 }
 

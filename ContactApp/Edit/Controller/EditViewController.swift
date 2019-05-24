@@ -94,5 +94,4 @@ extension EditViewController: UICollectionViewDataSource, UICollectionViewDelega
 
 protocol EditViewControllerDelegate: class {
     func didSaveContact(contactData: Contact)
-    func didAddContact()
 }
