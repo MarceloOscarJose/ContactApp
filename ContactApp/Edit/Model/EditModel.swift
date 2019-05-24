@@ -30,6 +30,17 @@ class EditModel: NSObject {
 
         return editData
     }
+
+    func saveContact(contact: Contact) {
+        let context = PersistenceManager.shared.persistentContainer.viewContext
+
+        do {
+            contact.didSave()
+            try context.save()
+        } catch {
+            print(error)
+        }
+    }
 }
 
 struct EditData {

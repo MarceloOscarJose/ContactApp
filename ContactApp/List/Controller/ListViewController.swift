@@ -66,7 +66,8 @@ class ListViewController: UIViewController, ContactDetailDelegate {
         searchController.searchBar.endEditing(true)
     }
 
-    func contactDeleted() {
+    func contactUpdated() {
+        self.navigationController?.popViewController(animated: true)
         contactsData = model.initContacts()
         filteredContactsData = contactsData
         contactTableView.reloadData()

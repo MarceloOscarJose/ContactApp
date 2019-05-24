@@ -22,7 +22,7 @@ class DetailModel: NSObject {
     func parseContactEntity(contact: Contact) -> [DetailData] {
 
         for (index, key) in detailData.enumerated() {
-            let value = contact.value(forKey: key.key)  as! String
+            let value = contact.value(forKey: key.key) as! String
             detailData[index].value = value
         }
 

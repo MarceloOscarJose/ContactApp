@@ -14,6 +14,7 @@ class EditViewController: UIViewController {
     @IBOutlet weak var editFieldsCollectionView: UICollectionView!
 
     // Data vars
+    var delegate: EditViewControllerDelegate!
     let editFieldtCellIdentifier = "EditFieldCollectionViewCell"
     let model = EditModel()
     var editData: [EditData]!
@@ -38,6 +39,25 @@ class EditViewController: UIViewController {
     }
 
     @IBAction func saveContact(_ sender: Any) {
+
+        for (index, value) in editData.enumerated() {
+            if let fieldValue = getFieldValue(index: index) {
+                contactData.setValue(fieldValue, forKey: value.key)
+            }
+        }
+
+        model.saveContact(contact: contactData)
+        updateForm()
+
+        if let delegate = self.delegate {
+            delegate.didSaveContact(contactData: contactData)
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+
+    func getFieldValue(index: Int) -> String? {
+        let cell = editFieldsCollectionView.cellForItem(at: IndexPath(item: index, section: 0)) as! EditFieldCollectionViewCell
+        return cell.fieldValueTextView.text
     }
 }
 
@@ -70,4 +90,8 @@ extension EditViewController: UICollectionViewDataSource, UICollectionViewDelega
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+}
+
+protocol EditViewControllerDelegate: class {
+    func didSaveContact(contactData: Contact)
 }

@@ -10,8 +10,6 @@ import UIKit
 import PXStickyHeaderCollectionView
 
 class DetailViewController: UIViewController, ContactListDelegate {
-    
-    
 
     // IBOutlets
     @IBOutlet weak var deleteButton: UIButton!
@@ -62,8 +60,7 @@ class DetailViewController: UIViewController, ContactListDelegate {
         let deleteAction = UIAlertAction(title: "Delete contact", style: .destructive, handler: { action in
             self.model.deleteContact(contact: self.contactData)
             if let delegate = self.delegate {
-                delegate.contactDeleted()
-                self.navigationController?.popViewController(animated: true)
+                delegate.contactUpdated()
             }
         })
 
@@ -77,12 +74,24 @@ class DetailViewController: UIViewController, ContactListDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editContact" {
             if let editViewController = segue.destination as? EditViewController {
+                editViewController.delegate = self
                 editViewController.contactData = contactData
             }
         }
     }
 }
 
+extension DetailViewController: EditViewControllerDelegate {
+
+    func didSaveContact(contactData: Contact) {
+        updateDetail(contactData: contactData)
+
+        if let delegate = self.delegate {
+            delegate.contactUpdated()
+        }
+    }
+}
+
 protocol ContactDetailDelegate: class {
-    func contactDeleted()
+    func contactUpdated()
 }
