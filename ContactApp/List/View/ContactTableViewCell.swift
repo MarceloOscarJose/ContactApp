@@ -27,6 +27,7 @@ class ContactTableViewCell: UITableViewCell {
         finalText.append(NSAttributedString(string: " \(lastName)", attributes: lastNameAttributes))
 
         if let searchText = searchText, phoneNumber.contains(searchText) {
+            finalText.append(NSAttributedString(string: "\nPhone number: ", attributes: phoneAttributes))
             finalText.append(searchStringInData(searchText: searchText, fieldValue: phoneNumber))
         }
 
@@ -34,12 +35,10 @@ class ContactTableViewCell: UITableViewCell {
     }
 
     func searchStringInData(searchText: String, fieldValue: String) -> NSAttributedString {
-        let finalString = NSMutableAttributedString(string: "\nPhone number: ", attributes: phoneAttributes)
+        let finalString = NSMutableAttributedString(string: fieldValue, attributes: phoneAttributes)
 
         let range = (fieldValue as NSString).range(of: searchText)
-        let phoneText = NSMutableAttributedString(string: fieldValue, attributes: phoneAttributes)
-        phoneText.setAttributes(phoneBoldAttributes, range: range)
-        finalString.append(phoneText)
+        finalString.setAttributes(phoneBoldAttributes, range: range)
 
         return finalString
     }
