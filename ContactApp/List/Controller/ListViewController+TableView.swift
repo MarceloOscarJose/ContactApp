@@ -38,7 +38,8 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let detailViewController = self.delegate as? DetailViewController {
             detailViewController.delegate = self
-            splitViewController?.showDetailViewController(detailViewController, sender: nil)
+            let navController = UINavigationController(rootViewController: detailViewController)
+            splitViewController?.showDetailViewController(navController, sender: nil)
 
             DispatchQueue.main.async {
                 self.delegate.updateDetail(contactData: self.filteredContactsData[indexPath.section][indexPath.item])
