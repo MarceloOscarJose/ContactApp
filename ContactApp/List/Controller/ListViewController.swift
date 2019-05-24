@@ -28,7 +28,7 @@ class ListViewController: UIViewController, ContactDetailDelegate {
     let contactHeaderCellIdentifier = "ContactHeaderTableViewCell"
 
     // Data vars
-    var delegate: ContactSelectDelegate!
+    var delegate: ContactListDelegate!
     let model = ListModel()
     var contactsData: [[Contact]] = []
     var filteredContactsData: [[Contact]] = []
@@ -73,6 +73,6 @@ class ListViewController: UIViewController, ContactDetailDelegate {
     }
 }
 
-protocol ContactSelectDelegate {
-    
+protocol ContactListDelegate {
+    func updateDetail(contactData: Contact)
 }

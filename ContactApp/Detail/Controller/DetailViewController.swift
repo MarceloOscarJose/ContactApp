@@ -9,7 +9,9 @@
 import UIKit
 import PXStickyHeaderCollectionView
 
-class DetailViewController: UIViewController, ContactSelectDelegate {
+class DetailViewController: UIViewController, ContactListDelegate {
+    
+    
 
     // IBOutlets
     @IBOutlet weak var deleteButton: UIButton!

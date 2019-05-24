@@ -19,8 +19,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="424" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" editable="NO" text="Label" translatesAutoresizingMaskIntoConstraints="NO" id="cuH-2h-4Rv">
-                        <rect key="frame" x="10" y="11" width="404" height="28"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Label" translatesAutoresizingMaskIntoConstraints="NO" id="cuH-2h-4Rv">
+                        <rect key="frame" x="10" y="8" width="404" height="34"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
@@ -41,7 +41,6 @@
                 <constraint firstItem="cuH-2h-4Rv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Nc8-R7-2oD"/>
                 <constraint firstAttribute="bottom" secondItem="sB6-Pa-cP3" secondAttribute="bottom" id="Y26-H6-TaO"/>
                 <constraint firstItem="sB6-Pa-cP3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Y94-5O-nEV"/>
-                <constraint firstAttribute="bottom" secondItem="cuH-2h-4Rv" secondAttribute="bottom" constant="11" id="gij-HL-2Rg"/>
                 <constraint firstAttribute="trailing" secondItem="cuH-2h-4Rv" secondAttribute="trailing" constant="10" id="pNV-pP-Elr"/>
                 <constraint firstAttribute="trailing" secondItem="sB6-Pa-cP3" secondAttribute="trailing" id="sXN-2M-feq"/>
             </constraints>

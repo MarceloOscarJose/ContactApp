@@ -41,7 +41,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
             splitViewController?.showDetailViewController(detailViewController, sender: nil)
 
             DispatchQueue.main.async {
-                detailViewController.updateDetail(contactData: self.filteredContactsData[indexPath.section][indexPath.item])
+                self.delegate.updateDetail(contactData: self.filteredContactsData[indexPath.section][indexPath.item])
             }
             
         }
