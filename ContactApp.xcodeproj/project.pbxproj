@@ -31,6 +31,8 @@
 		9C61DF51229763F500B140D7 /* DetailViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C61DF50229763F500B140D7 /* DetailViewController+CollectionView.swift */; };
 		9C7FDBA8229779B80087644F /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7FDBA7229779B80087644F /* EditViewController.swift */; };
 		9C7FDBAA229779D30087644F /* EditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7FDBA9229779D30087644F /* EditModel.swift */; };
+		9C7FDBAE22977D730087644F /* EditFieldCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7FDBAC22977D730087644F /* EditFieldCollectionViewCell.swift */; };
+		9C7FDBAF22977D730087644F /* EditFieldCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C7FDBAD22977D730087644F /* EditFieldCollectionViewCell.xib */; };
 		9CEC9B3A22958F8500D08D90 /* ContactHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC9B3822958F8500D08D90 /* ContactHeaderTableViewCell.swift */; };
 		9CEC9B3B22958F8500D08D90 /* ContactHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CEC9B3922958F8500D08D90 /* ContactHeaderTableViewCell.xib */; };
 		9CEC9B3E2295986B00D08D90 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC9B3D2295986B00D08D90 /* UIColor.swift */; };
@@ -85,6 +87,8 @@
 		9C61DF50229763F500B140D7 /* DetailViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		9C7FDBA7229779B80087644F /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		9C7FDBA9229779D30087644F /* EditModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditModel.swift; sourceTree = "<group>"; };
+		9C7FDBAC22977D730087644F /* EditFieldCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFieldCollectionViewCell.swift; sourceTree = "<group>"; };
+		9C7FDBAD22977D730087644F /* EditFieldCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditFieldCollectionViewCell.xib; sourceTree = "<group>"; };
 		9CEC9B3822958F8500D08D90 /* ContactHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		9CEC9B3922958F8500D08D90 /* ContactHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		9CEC9B3D2295986B00D08D90 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -321,6 +325,8 @@
 		9C7FDBAB229779D80087644F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9C7FDBAC22977D730087644F /* EditFieldCollectionViewCell.swift */,
+				9C7FDBAD22977D730087644F /* EditFieldCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -451,6 +457,7 @@
 				9CEC9B3B22958F8500D08D90 /* ContactHeaderTableViewCell.xib in Resources */,
 				9C5B5A7322956FA7006CA17A /* ContactTableViewCell.xib in Resources */,
 				9C5B5A77229573A5006CA17A /* Config.plist in Resources */,
+				9C7FDBAF22977D730087644F /* EditFieldCollectionViewCell.xib in Resources */,
 				9C1C788222944E0600227047 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -557,6 +564,7 @@
 				9C5B5A7222956FA7006CA17A /* ContactTableViewCell.swift in Sources */,
 				9C61DF402297121400B140D7 /* DetailModel.swift in Sources */,
 				9C3DBF36229772E9004318B8 /* Contact+CoreDataClass.swift in Sources */,
+				9C7FDBAE22977D730087644F /* EditFieldCollectionViewCell.swift in Sources */,
 				9C1C787D22944E0600227047 /* AppDelegate.swift in Sources */,
 				9C1C78B92294C20800227047 /* MainViewController.swift in Sources */,
 			);

@@ -73,6 +73,14 @@ class DetailViewController: UIViewController, ContactListDelegate {
         // Here show constraints issue. It's an iOS bug
         self.present(alert, animated: true)
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editContact" {
+            if let editViewController = segue.destination as? EditViewController {
+                editViewController.updateForm(contact: contactData)
+            }
+        }
+    }
 }
 
 protocol ContactDetailDelegate: class {
