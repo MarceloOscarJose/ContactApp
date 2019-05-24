@@ -21,7 +21,7 @@ extension EditViewController: UICollectionViewDataSource, UICollectionViewDelega
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: editFieldtCellIdentifier, for: indexPath) as! EditFieldCollectionViewCell
         let data = editData[indexPath.item]
-        cell.updateField(fieldName: data.name, fieldValue: data.value, contextType: data.contextType, keyboardType: data.keyboardType)
+        cell.updateField(fieldName: data.name, fieldValue: data.value, contextType: data.contextType, keyboardType: data.keyboardType, required: data.required)
         return cell
     }
 

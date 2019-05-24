@@ -83,37 +83,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQ2-CI-kyU">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oLE-GT-KTL">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oLE-GT-KTL">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Nfq-nS-uOl">
-                                            <size key="itemSize" width="50" height="50"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells/>
-                                    </collectionView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="oLE-GT-KTL" firstAttribute="centerX" secondItem="pQ2-CI-kyU" secondAttribute="centerX" id="Kfl-yh-5vk"/>
-                                    <constraint firstItem="oLE-GT-KTL" firstAttribute="height" secondItem="pQ2-CI-kyU" secondAttribute="height" id="QLV-kK-CDA"/>
-                                    <constraint firstItem="oLE-GT-KTL" firstAttribute="top" secondItem="pQ2-CI-kyU" secondAttribute="top" id="XAm-HN-iwY"/>
-                                    <constraint firstAttribute="trailing" secondItem="oLE-GT-KTL" secondAttribute="trailing" id="gw2-Xg-lCB"/>
-                                    <constraint firstAttribute="bottom" secondItem="oLE-GT-KTL" secondAttribute="bottom" id="mGe-2P-8dX"/>
-                                    <constraint firstItem="oLE-GT-KTL" firstAttribute="leading" secondItem="pQ2-CI-kyU" secondAttribute="leading" id="qC2-2Z-3TH"/>
-                                </constraints>
-                            </scrollView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Nfq-nS-uOl">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="pQ2-CI-kyU" firstAttribute="trailing" secondItem="VnG-59-G9m" secondAttribute="trailing" id="aIL-N7-cSb"/>
-                            <constraint firstItem="pQ2-CI-kyU" firstAttribute="top" secondItem="VnG-59-G9m" secondAttribute="top" id="oFh-dX-sFZ"/>
-                            <constraint firstItem="pQ2-CI-kyU" firstAttribute="bottom" secondItem="VnG-59-G9m" secondAttribute="bottom" id="ts3-0P-uWg"/>
-                            <constraint firstItem="pQ2-CI-kyU" firstAttribute="leading" secondItem="VnG-59-G9m" secondAttribute="leading" id="zNw-Wl-X3X"/>
+                            <constraint firstItem="oLE-GT-KTL" firstAttribute="leading" secondItem="VnG-59-G9m" secondAttribute="leading" id="7Rs-QG-9zY"/>
+                            <constraint firstItem="oLE-GT-KTL" firstAttribute="trailing" secondItem="VnG-59-G9m" secondAttribute="trailing" id="Gc8-7a-P51"/>
+                            <constraint firstItem="oLE-GT-KTL" firstAttribute="top" secondItem="VnG-59-G9m" secondAttribute="top" id="g31-rD-Oou"/>
+                            <constraint firstItem="VnG-59-G9m" firstAttribute="bottom" secondItem="oLE-GT-KTL" secondAttribute="bottom" id="q3a-Ng-kAH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VnG-59-G9m"/>
                     </view>
@@ -125,6 +112,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bottomConstraint" destination="q3a-Ng-kAH" id="sf8-EL-lav"/>
                         <outlet property="editFieldsCollectionView" destination="oLE-GT-KTL" id="FYh-WZ-V8x"/>
                     </connections>
                 </viewController>
