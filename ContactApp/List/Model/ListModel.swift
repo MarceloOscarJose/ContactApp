@@ -12,7 +12,7 @@ class ListModel: GeneralModel {
 
     let initilizedContactKey = ConfigManager.shared.config.initilizedContactKey
 
-    func initContacts() -> [[Contact]] {
+    func initContacts() {
         if !shouldInitilizeContacts() {
             let contacts = getInitContacts()
 
@@ -22,8 +22,6 @@ class ListModel: GeneralModel {
 
             changeInitalizedContacts(value: true)
         }
-
-        return getContacts()
     }
 
     func changeInitalizedContacts(value: Bool) {
@@ -73,6 +71,8 @@ class ListModel: GeneralModel {
     }
 
     func getContacts() -> [[Contact]] {
+        initContacts()
+
         var dataModelContacts: [String: [Contact]] = [:]
 
         if let contacts = PersistenceManager.shared.fetch(Contact.self, sortBy: ["lastName", "firstName"], ascending: true) {

@@ -66,7 +66,7 @@ class DetailViewController: UIViewController {
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { action in
             self.model.deleteContact(contact: self.contactData)
             if let delegate = self.delegate {
-                delegate.contactDeleted()
+                delegate.contactUpdated()
                 self.navigationController?.popViewController(animated: true)
             }
         })
@@ -92,12 +92,11 @@ extension DetailViewController: EditViewControllerDelegate {
         reloadDetailView()
 
         if let delegate = self.delegate {
-            delegate.contactUpdated(contactData: contactData)
+            delegate.contactUpdated()
         }
     }
 }
 
 protocol ContactDetailDelegate: class {
-    func contactUpdated(contactData: Contact)
-    func contactDeleted()
+    func contactUpdated()
 }

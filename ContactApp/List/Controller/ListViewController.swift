@@ -61,7 +61,7 @@ class ListViewController: UIViewController, ContactDetailDelegate, EditViewContr
     }
 
     func getContacts() {
-        contactsData = model.initContacts()
+        contactsData = model.getContacts()
         filteredContactsData = contactsData
         contactTableView.reloadData()
     }
@@ -74,11 +74,7 @@ class ListViewController: UIViewController, ContactDetailDelegate, EditViewContr
         getContacts()
     }
 
-    func contactUpdated(contactData: Contact) {
-        getContacts()
-    }
-
-    func contactDeleted() {
+    func contactUpdated() {
         getContacts()
     }
 
