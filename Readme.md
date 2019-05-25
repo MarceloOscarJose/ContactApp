@@ -2,6 +2,7 @@
 
 ### Pods used
 #### PXStickyHeaderCollectionView: My own pod ;)
+https://github.com/MarceloOscarJose/PXStickyHeaderCollectionView
 
 ### Usage
 ```ruby
