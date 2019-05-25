@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rvK-Le-9oY">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="a2I-Fj-z1i">
+            <objects>
+                <navigationController id="rvK-Le-9oY" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="UWH-iO-ZTl">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7n6-sW-OwJ" kind="relationship" relationship="rootViewController" id="1Dx-fh-GKI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KaM-U6-aW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-520" y="-191"/>
+        </scene>
+        <!--Contacts-->
+        <scene sceneID="RjK-6F-W7Z">
+            <objects>
+                <viewController id="7n6-sW-OwJ" customClass="ListViewController" customModule="ContactApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XC5-l3-KIk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="djv-c6-oQM">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="djv-c6-oQM" firstAttribute="trailing" secondItem="pLG-Bk-JC5" secondAttribute="trailing" id="Bh1-qh-IpI"/>
+                            <constraint firstItem="djv-c6-oQM" firstAttribute="leading" secondItem="pLG-Bk-JC5" secondAttribute="leading" id="Jmd-3E-7Tf"/>
+                            <constraint firstItem="djv-c6-oQM" firstAttribute="top" secondItem="pLG-Bk-JC5" secondAttribute="top" id="e3O-QS-NBG"/>
+                            <constraint firstItem="pLG-Bk-JC5" firstAttribute="bottom" secondItem="djv-c6-oQM" secondAttribute="bottom" id="yxt-R8-svm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pLG-Bk-JC5"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Contacts" id="F74-Hx-7Ik">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rER-sH-uog">
+                            <connections>
+                                <action selector="addContact:" destination="7n6-sW-OwJ" id="hXE-uo-6Rk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="contactTableView" destination="djv-c6-oQM" id="ROs-Xd-2zh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="15h-M5-vFA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="316" y="-192"/>
+        </scene>
+    </scenes>
+</document>

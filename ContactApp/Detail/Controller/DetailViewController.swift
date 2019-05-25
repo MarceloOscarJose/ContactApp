@@ -13,6 +13,7 @@ class DetailViewController: UIViewController, ContactListDelegate {
 
     // IBOutlets
     @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var editButton: UIButton!
     
     // Collection view
     var containerView: PXStickyHeaderCollectionView!
@@ -32,6 +33,7 @@ class DetailViewController: UIViewController, ContactListDelegate {
 
     func setupControls() {
         navigationItem.largeTitleDisplayMode = .never
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editAction))
 
         containerView = PXStickyHeaderCollectionView(initHeaderHeight: 100, minHeaderHeight: 50, maxHeaderHeight: 150, headerView: headerView)
         containerView.translatesAutoresizingMaskIntoConstraints = false
@@ -46,20 +48,17 @@ class DetailViewController: UIViewController, ContactListDelegate {
         containerView.delegate = self
         containerView.dataSource = self
 
-        toggleControls(false)
+        reloadDetailView()
     }
 
-    func updateDetail(contactData: Contact) {
+    func setContactData(contactData: Contact) {
         self.contactData = contactData
         self.detaildata = model.parseContactEntity(contact: contactData)
-        headerView.updateHeader(firstName: contactData.firstName, lastName: contactData.lastName)
-        self.containerView.collectionView.reloadData()
-        toggleControls(true)
     }
 
-    func toggleControls(_ show: Bool) {
-        self.containerView.isHidden = !show
-        self.deleteButton.isHidden = !show
+    func reloadDetailView() {
+        headerView.updateHeader(firstName: contactData.firstName, lastName: contactData.lastName)
+        self.containerView.collectionView.reloadData()
     }
 
     @IBAction func deleteAction(_ sender: Any) {
@@ -69,7 +68,6 @@ class DetailViewController: UIViewController, ContactListDelegate {
             self.model.deleteContact(contact: self.contactData)
             if let delegate = self.delegate {
                 delegate.contactDeleted()
-                self.toggleControls(false)
             }
         })
 
@@ -78,22 +76,20 @@ class DetailViewController: UIViewController, ContactListDelegate {
         self.present(alert, animated: true)
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "editContact" {
-            if let navigationController = segue.destination as? UINavigationController {
-                if let editViewController = navigationController.viewControllers.first as? EditViewController {
-                    editViewController.delegate = self
-                    editViewController.contactData = contactData
-                }
-            }
-        }
+    @objc func editAction() {
+        let editViewController = EditViewController()
+        editViewController.delegate = self
+        editViewController.contactData = contactData
+
+        self.navigationController?.pushViewController(editViewController, animated: true)
     }
 }
 
 extension DetailViewController: EditViewControllerDelegate {
 
-    func didSaveContact(contactData: Contact) {
-        updateDetail(contactData: contactData)
+    func contactSaved(contactData: Contact) {
+        setContactData(contactData: contactData)
+        reloadDetailView()
 
         if let delegate = self.delegate {
             delegate.contactUpdated(contactData: contactData)

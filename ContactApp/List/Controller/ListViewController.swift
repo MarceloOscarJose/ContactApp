@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListViewController: UIViewController, ContactDetailDelegate {
+class ListViewController: UIViewController, ContactDetailDelegate, EditViewControllerDelegate {
 
     // IBOutlets
     @IBOutlet weak var contactTableView: UITableView!
@@ -71,9 +71,13 @@ class ListViewController: UIViewController, ContactDetailDelegate {
         searchController.searchBar.endEditing(true)
     }
 
-    func contactUpdated(contactData: Contact) {
+    func contactSaved(contactData: Contact) {
         getContacts()
         showContactDetail(contactData: contactData)
+    }
+
+    func contactUpdated(contactData: Contact) {
+        getContacts()
     }
 
     func contactDeleted() {
@@ -81,37 +85,23 @@ class ListViewController: UIViewController, ContactDetailDelegate {
         self.navigationController?.popViewController(animated: true)
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "addContact" {
-            if let navigationController = segue.destination as? UINavigationController {
-                if let editViewController = navigationController.viewControllers.first as? EditViewController {
-                    editViewController.contactData = model.createNewContact()
-                    editViewController.delegate = self
-                }
-            }
-        }
+    @IBAction func addContact(_ sender: Any) {
+        let editViewController = EditViewController()
+        editViewController.contactData = model.createNewContact()
+        editViewController.delegate = self
+
+        self.navigationController?.pushViewController(editViewController, animated: true)
     }
 
     func showContactDetail(contactData: Contact) {
-        if let detailViewController = self.delegate as? DetailViewController {
-            DispatchQueue.main.async {
-                detailViewController.delegate = self
-                self.delegate.updateDetail(contactData: contactData)
-                let navController = UINavigationController(rootViewController: detailViewController)
-                self.splitViewController?.showDetailViewController(navController, sender: nil)
-            }
-        }
-    }
-}
-
-extension ListViewController: EditViewControllerDelegate {
-
-    func didSaveContact(contactData: Contact) {
-        getContacts()
-        showContactDetail(contactData: contactData)
+        let detailViewController = DetailViewController()
+        self.delegate = detailViewController
+        detailViewController.delegate = self
+        self.delegate.setContactData(contactData: contactData)
+        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
 
 protocol ContactListDelegate {
-    func updateDetail(contactData: Contact)
+    func setContactData(contactData: Contact)
 }

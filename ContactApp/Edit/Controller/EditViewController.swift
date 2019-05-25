@@ -31,6 +31,7 @@ class EditViewController: UIViewController {
 
     func setupControls() {
         navigationItem.largeTitleDisplayMode = .never
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveContact))
 
         let gesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         gesture.cancelsTouchesInView = false
@@ -42,7 +43,7 @@ class EditViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
 
-    @IBAction func saveContact(_ sender: Any) {
+    @objc func saveContact() {
         hideKeyboard()
 
         for (index, value) in editData.enumerated() {
@@ -59,11 +60,13 @@ class EditViewController: UIViewController {
         self.updateForm()
 
         if let delegate = self.delegate {
-            delegate.didSaveContact(contactData: contactData)
+            delegate.contactSaved(contactData: contactData)
         }
+
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
 protocol EditViewControllerDelegate: class {
-    func didSaveContact(contactData: Contact)
+    func contactSaved(contactData: Contact)
 }
