@@ -10,16 +10,6 @@ import UIKit
 
 class DetailModel: GeneralModel {
 
-    func parseContactEntity(contact: Contact) -> [ContactData] {
-
-        for (index, key) in contactDataFields.enumerated() {
-            let value = contact.value(forKey: key.key) as! String
-            contactDataFields[index].value = value
-        }
-
-        return contactDataFields
-    }
-
     func deleteContact(contact: Contact) {
         let context = PersistenceManager.shared.persistentContainer.viewContext
 

@@ -34,6 +34,15 @@ class GeneralModel: NSObject {
 
         return []
     }
+
+    func parseContactEntity(contact: Contact) -> [ContactData] {
+        for (index, key) in contactDataFields.enumerated() {
+            let value = contact.value(forKey: key.key) as! String
+            contactDataFields[index].value = value
+        }
+
+        return contactDataFields
+    }
 }
 
 struct ContactData {
