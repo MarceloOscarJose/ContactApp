@@ -39,6 +39,8 @@ class EditViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
 
+        editData = model.parseContactEntity(contact: contactData)
+
         // Create form rows
         setupForm()
     }

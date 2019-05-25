@@ -12,7 +12,6 @@ extension EditViewController {
 
     func setupForm() {
 
-        editData = model.parseContactEntity(contact: contactData)
         var lastElement: UIView = editFormScrollView
 
         for values in editData {
@@ -21,14 +20,12 @@ extension EditViewController {
             editFormScrollView.addSubview(formRow)
 
             let topAnchor = lastElement == editFormScrollView ? lastElement.topAnchor : lastElement.bottomAnchor
-
             formRow.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
             formRow.leadingAnchor.constraint(equalTo: editFormScrollView.leadingAnchor).isActive = true
             formRow.widthAnchor.constraint(equalTo: editFormScrollView.widthAnchor, multiplier: 1).isActive = true
             formRow.heightAnchor.constraint(equalToConstant: 50).isActive = true
 
             lastElement = formRow
-
             formFields.append(formRow)
         }
 

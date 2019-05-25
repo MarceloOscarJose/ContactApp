@@ -12,7 +12,6 @@ import CoreData
 
 @objc(Contact)
 public class Contact: NSManagedObject {
-
 }
 
 extension Contact {
