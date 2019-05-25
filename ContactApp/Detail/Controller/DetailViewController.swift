@@ -13,8 +13,7 @@ class DetailViewController: UIViewController {
 
     // IBOutlets
     @IBOutlet weak var deleteButton: UIButton!
-    @IBOutlet weak var editButton: UIButton!
-    
+
     // Collection view
     var containerView: PXStickyHeaderCollectionView!
     let headerView = DetailHeaderView()
@@ -39,10 +38,10 @@ class DetailViewController: UIViewController {
         containerView.translatesAutoresizingMaskIntoConstraints = false
 
         self.view.addSubview(containerView)
-        NSLayoutConstraint(item: containerView!, attribute: .top, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .top, multiplier: 1, constant: 0).isActive = true
-        NSLayoutConstraint(item: containerView!, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1, constant: 0).isActive = true
-        NSLayoutConstraint(item: containerView!, attribute: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailing, multiplier: 1, constant: 0).isActive = true
-        NSLayoutConstraint(item: containerView!, attribute: .bottom, relatedBy: .equal, toItem: deleteButton, attribute: .top, multiplier: 1, constant: 0).isActive = true
+        containerView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+        containerView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        containerView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        containerView.bottomAnchor.constraint(equalTo: deleteButton.topAnchor).isActive = true
 
         containerView.collectionView.register(UINib(nibName: detailFieldtCellIdentifier, bundle: .main), forCellWithReuseIdentifier: detailFieldtCellIdentifier)
         containerView.delegate = self

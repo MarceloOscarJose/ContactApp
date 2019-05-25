@@ -19,7 +19,7 @@ class EditViewController: UIViewController {
     let model = EditModel()
     var editData: [ContactData]!
     var contactData: Contact!
-    var formFields: [EditFormRow] = []
+    var formFields: [EditFormRowView] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()

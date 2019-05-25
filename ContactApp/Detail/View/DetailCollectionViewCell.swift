@@ -17,7 +17,6 @@ class DetailCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        detailFieldLabel.dataDetectorTypes = .all
     }
 
     func updateCell(fieldName: String, fieldData: String) {

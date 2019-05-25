@@ -35,10 +35,7 @@ class DetailHeaderView: UIView {
     }
 
     override func layoutSubviews() {
-        if self.initialHeight == nil {
-            initialHeight = self.frame.height
-        }
-
+        initialHeight = self.initialHeight ?? self.frame.height
         let scaledFont = (23 * self.frame.height / initialHeight)
         let fontSize = scaledFont < 18 ? 18 : scaledFont > 27 ? 27 : scaledFont
         titleLabel.font = UIFont(name: "HelveticaNeue-Bold", size: fontSize)
@@ -47,9 +44,9 @@ class DetailHeaderView: UIView {
     func setupControls() {
         self.backgroundColor = UIColor.headerColor
         self.addSubview(titleLabel)
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
 
-        NSLayoutConstraint(item: titleLabel, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
-        NSLayoutConstraint(item: titleLabel, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 10).isActive = true
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        titleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
 }

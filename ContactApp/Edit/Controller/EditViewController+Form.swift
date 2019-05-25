@@ -16,22 +16,23 @@ extension EditViewController {
         var lastElement: UIView = editFormScrollView
 
         for values in editData {
-            let formRow = EditFormRow()
+            let formRow = EditFormRowView()
             formRow.updateRow(fieldName: values.name, fieldValue: values.value, contextType: values.contextType, keyboardType: values.keyboardType, required: values.required)
             editFormScrollView.addSubview(formRow)
 
-            let top: NSLayoutConstraint.Attribute = lastElement == editFormScrollView ? .top : .bottom
-            NSLayoutConstraint(item: formRow, attribute: .top, relatedBy: .equal, toItem: lastElement, attribute: top, multiplier: 1, constant: 0).isActive = true
-            NSLayoutConstraint(item: formRow, attribute: .leading, relatedBy: .equal, toItem: editFormScrollView, attribute: .leading, multiplier: 1, constant: 0).isActive = true
-            NSLayoutConstraint(item: formRow, attribute: .width, relatedBy: .equal, toItem: editFormScrollView, attribute: .width, multiplier: 1, constant: 0).isActive = true
-            NSLayoutConstraint(item: formRow, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 50).isActive = true
+            let topAnchor = lastElement == editFormScrollView ? lastElement.topAnchor : lastElement.bottomAnchor
+
+            formRow.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
+            formRow.leadingAnchor.constraint(equalTo: editFormScrollView.leadingAnchor).isActive = true
+            formRow.widthAnchor.constraint(equalTo: editFormScrollView.widthAnchor, multiplier: 1).isActive = true
+            formRow.heightAnchor.constraint(equalToConstant: 50).isActive = true
 
             lastElement = formRow
-            
+
             formFields.append(formRow)
         }
 
-        NSLayoutConstraint(item: lastElement, attribute: .bottom, relatedBy: .equal, toItem: editFormScrollView, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
+        lastElement.bottomAnchor.constraint(equalTo: editFormScrollView.bottomAnchor, constant: 0).isActive = true
     }
 
     func showFormErrorValidation() {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C1B4EFF22990E350022679F /* EditFormRowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C1B4EFE22990E350022679F /* EditFormRowView.xib */; };
 		9C1C787D22944E0600227047 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1C787C22944E0600227047 /* AppDelegate.swift */; };
 		9C1C788222944E0600227047 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C1C788022944E0600227047 /* List.storyboard */; };
 		9C1C788522944E0600227047 /* ContactApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C1C788322944E0600227047 /* ContactApp.xcdatamodeld */; };
@@ -60,6 +61,7 @@
 		5D3FD71BA2F44415137F27E0 /* Pods-ContactAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ContactAppTests/Pods-ContactAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9B5A30273A5A25F455E06BB0 /* Pods-ContactApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactApp.debug.xcconfig"; path = "Target Support Files/Pods-ContactApp/Pods-ContactApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9BDD7815B3D0581973CC3D70 /* Pods_ContactApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContactApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C1B4EFE22990E350022679F /* EditFormRowView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditFormRowView.xib; sourceTree = "<group>"; };
 		9C1C787922944E0600227047 /* ContactApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C1C787C22944E0600227047 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C1C788122944E0600227047 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/List.storyboard; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				9CA3FB2722986EAD002D90E4 /* EditFormRow.swift */,
+				9C1B4EFE22990E350022679F /* EditFormRowView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				9C1C788A22944E0700227047 /* LaunchScreen.storyboard in Resources */,
 				9C1C788722944E0700227047 /* Assets.xcassets in Resources */,
 				9CA3FB372298BDB7002D90E4 /* DetailViewController.xib in Resources */,
+				9C1B4EFF22990E350022679F /* EditFormRowView.xib in Resources */,
 				9C61DF4C2297509C00B140D7 /* DetailCollectionViewCell.xib in Resources */,
 				9CEC9B3B22958F8500D08D90 /* ContactHeaderTableViewCell.xib in Resources */,
 				9C5B5A7322956FA7006CA17A /* ContactTableViewCell.xib in Resources */,
