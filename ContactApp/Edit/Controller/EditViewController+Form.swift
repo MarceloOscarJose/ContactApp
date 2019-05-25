@@ -17,6 +17,7 @@ extension EditViewController {
             formRow.updateRow(fieldName: values.name, fieldValue: values.value, keyboardType: values.keyboardType, required: values.required)
             formStackView.addArrangedSubview(formRow)
             formRow.heightAnchor.constraint(equalToConstant: 50).isActive = true
+            formFields.append(formRow)
         }
     }
 

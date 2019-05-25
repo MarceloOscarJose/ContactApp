@@ -25,8 +25,7 @@ class GeneralModel: NSObject {
         if let path = Bundle.main.path(forResource: "Contacts", ofType: "json") {
             do {
                 let data: Data = try NSData(contentsOfFile: path as String, options: NSData.ReadingOptions.dataReadingMapped) as Data
-                let contacts = try JSONDecoder().decode([ContactCodable].self, from: data)
-                return contacts
+                return try JSONDecoder().decode([ContactCodable].self, from: data)
             } catch let error {
                 print(error)
             }
@@ -53,7 +52,7 @@ struct ContactData {
     var value: String
 }
 
-struct ContactCodable: Codable {
+class ContactCodable: NSObject, Codable {
     var firstName: String
     var lastName: String
     var phoneNumber: String

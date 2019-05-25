@@ -37,15 +37,12 @@ class ListModel: GeneralModel {
 
         do {
             let newContact = Contact(context: context)
+
+            for attr in Contact.entity().attributesByName {
+                newContact.setValue(contact.value(forKeyPath: attr.key), forKey: attr.key)
+            }
+
             newContact.contactID = UUID().uuidString
-            newContact.firstName = contact.firstName
-            newContact.lastName = contact.lastName
-            newContact.phoneNumber = contact.phoneNumber
-            newContact.streetAddress1 = contact.streetAddress1
-            newContact.streetAddress2 = contact.streetAddress2
-            newContact.state = contact.state
-            newContact.city = contact.city
-            newContact.zipCode = contact.zipCode
             newContact.didSave()
 
             try context.save()
@@ -56,18 +53,14 @@ class ListModel: GeneralModel {
 
     func createNewContact() -> Contact {
         let context = PersistenceManager.shared.persistentContainer.viewContext
-        let newContact = Contact(context: context)
-        newContact.contactID = UUID().uuidString
-        newContact.firstName = ""
-        newContact.lastName = ""
-        newContact.phoneNumber = ""
-        newContact.streetAddress1 = ""
-        newContact.streetAddress2 = ""
-        newContact.city = ""
-        newContact.state = ""
-        newContact.zipCode = ""
+        let contact = Contact(context: context)
 
-        return newContact
+        for attr in Contact.entity().attributesByName {
+            contact.setValue("", forKey: attr.key)
+        }
+
+        contact.contactID = UUID().uuidString
+        return contact
     }
 
     func getContacts() -> [[Contact]] {
