@@ -9,7 +9,7 @@
 import UIKit
 import PXStickyHeaderCollectionView
 
-class DetailViewController: UIViewController, ContactListDelegate {
+class DetailViewController: UIViewController {
 
     // IBOutlets
     @IBOutlet weak var deleteButton: UIButton!
@@ -68,6 +68,7 @@ class DetailViewController: UIViewController, ContactListDelegate {
             self.model.deleteContact(contact: self.contactData)
             if let delegate = self.delegate {
                 delegate.contactDeleted()
+                self.navigationController?.popViewController(animated: true)
             }
         })
 

@@ -19,7 +19,7 @@ class ListViewController: UIViewController, ContactDetailDelegate, EditViewContr
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.tintColor = UIColor.ligthBlue
         searchController.searchBar.searchBarStyle = .minimal
-        searchController.searchBar.placeholder = "Search by name, last name or phone"
+        searchController.searchBar.placeholder = "Search by name or phone"
         return searchController
     }()
 
@@ -28,7 +28,6 @@ class ListViewController: UIViewController, ContactDetailDelegate, EditViewContr
     let contactHeaderCellIdentifier = "ContactHeaderTableViewCell"
 
     // Data vars
-    var delegate: ContactListDelegate!
     let model = ListModel()
     var contactsData: [[Contact]] = []
     var filteredContactsData: [[Contact]] = []
@@ -73,7 +72,6 @@ class ListViewController: UIViewController, ContactDetailDelegate, EditViewContr
 
     func contactSaved(contactData: Contact) {
         getContacts()
-        showContactDetail(contactData: contactData)
     }
 
     func contactUpdated(contactData: Contact) {
@@ -82,26 +80,19 @@ class ListViewController: UIViewController, ContactDetailDelegate, EditViewContr
 
     func contactDeleted() {
         getContacts()
-        self.navigationController?.popViewController(animated: true)
     }
 
     @IBAction func addContact(_ sender: Any) {
         let editViewController = EditViewController()
         editViewController.contactData = model.createNewContact()
         editViewController.delegate = self
-
         self.navigationController?.pushViewController(editViewController, animated: true)
     }
 
     func showContactDetail(contactData: Contact) {
         let detailViewController = DetailViewController()
-        self.delegate = detailViewController
         detailViewController.delegate = self
-        self.delegate.setContactData(contactData: contactData)
+        detailViewController.setContactData(contactData: contactData)
         self.navigationController?.pushViewController(detailViewController, animated: true)
     }
-}
-
-protocol ContactListDelegate {
-    func setContactData(contactData: Contact)
 }
