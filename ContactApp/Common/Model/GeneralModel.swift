@@ -61,4 +61,18 @@ class ContactCodable: NSObject, Codable {
     var city: String?
     var state: String?
     var zipCode: String?
+
+    func getEncodeData() -> [String: Any] {
+        let encoder = JSONEncoder()
+
+        do {
+            let jsonData = try? encoder.encode(self)
+            let contactObject = try JSONSerialization.jsonObject(with: jsonData!, options: [])
+            return contactObject as! [String : Any]
+        } catch {
+            print(error)
+        }
+
+        return [:]
+    }
 }

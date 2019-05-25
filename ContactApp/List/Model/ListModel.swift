@@ -37,9 +37,10 @@ class ListModel: GeneralModel {
 
         do {
             let newContact = Contact(context: context)
+            let values = contact.getEncodeData()
 
-            for attr in Contact.entity().attributesByName {
-                newContact.setValue(contact.value(forKeyPath: attr.key), forKey: attr.key)
+            for value in values {
+                newContact.setValue(value.value as! String, forKey: value.key)
             }
 
             newContact.contactID = UUID().uuidString
