@@ -1,11 +1,11 @@
 # ContactApp
 
-## Pods used
-### PXStickyHeaderCollectionView: My own pod ;)
+### Pods used
+#### PXStickyHeaderCollectionView: My own pod ;)
 
-## Usage
+### Usage
 ```ruby
 pod install
 ```
 
-# Marcelo Oscar José - 2019
+## Marcelo Oscar José - 2019
