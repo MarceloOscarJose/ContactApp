@@ -2,7 +2,7 @@ PODS:
   - PXStickyHeaderCollectionView (1.2.1)
 
 DEPENDENCIES:
-  - PXStickyHeaderCollectionView
+  - PXStickyHeaderCollectionView (= 1.2.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -11,6 +11,6 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   PXStickyHeaderCollectionView: 72fc9caea4317eadb165e8bed2acfe139e00adf7
 
-PODFILE CHECKSUM: 73e53ba17af81b4ad3f42d43f72c2519b545d0f7
+PODFILE CHECKSUM: 6740f3f66111ef44700a623685faea51b2a57273
 
 COCOAPODS: 1.6.0

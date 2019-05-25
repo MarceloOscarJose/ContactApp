@@ -6,7 +6,7 @@ target 'ContactApp' do
   use_frameworks!
 
   # Pods for ContactApp
-  pod 'PXStickyHeaderCollectionView'
+  pod 'PXStickyHeaderCollectionView', '1.2.1'
 
   target 'ContactAppTests' do
     inherit! :search_paths
