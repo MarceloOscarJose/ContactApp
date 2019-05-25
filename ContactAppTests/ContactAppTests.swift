@@ -31,7 +31,7 @@ class ContactAppTests: XCTestCase {
         let model = ListModel()
 
         model.changeInitalizedContacts(value: false)
-        let contacts = model.initContacts()
+        let contacts = model.getContacts()
         model.changeInitalizedContacts(value: true)
         XCTAssert(contacts.count == 8)
         XCTAssert(contacts[2].count == 3)
