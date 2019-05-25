@@ -52,7 +52,7 @@ struct ContactData {
     var value: String
 }
 
-class ContactCodable: NSObject, Codable {
+struct ContactCodable: Codable {
     var firstName: String
     var lastName: String
     var phoneNumber: String
