@@ -12,7 +12,15 @@ import XCTest
 class ContactAppTests: XCTestCase {
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        let model = ListModel()
+        let detailModel = DetailModel()
+
+        let contactSections = model.getContacts()
+        for sections in contactSections {
+            for contact in sections {
+                detailModel.deleteContact(contact: contact)
+            }
+        }
     }
 
     override func tearDown() {
@@ -21,20 +29,12 @@ class ContactAppTests: XCTestCase {
 
     func testListModel() {
         let model = ListModel()
-        let detailModel = DetailModel()
-
-        var contactSections = model.getContacts()
-        for sections in contactSections {
-            for contact in sections {
-                detailModel.deleteContact(contact: contact)
-            }
-        }
 
         model.changeInitalizedContacts(value: false)
-        contactSections = model.initContacts()
+        let contacts = model.initContacts()
         model.changeInitalizedContacts(value: true)
-        XCTAssert(contactSections.count == 8)
-        XCTAssert(contactSections[2].count == 3)
+        XCTAssert(contacts.count == 8)
+        XCTAssert(contacts[2].count == 3)
     }
 
     func testEditModel() {
