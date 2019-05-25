@@ -1,5 +1,5 @@
 //
-//  EditRowField.swift
+//  EditFormRow.swift
 //  ContactApp
 //
 //  Created by Marcelo José on 24/05/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditFormFieldRow: UIView {
+class EditFormRow: UIView {
 
     lazy var rowLabel: UILabel = {
         let rowLabel = UILabel()
@@ -65,7 +65,7 @@ class EditFormFieldRow: UIView {
         NSLayoutConstraint(item: separator, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 1).isActive = true
     }
 
-    func updateField(fieldName: String, fieldValue: String, contextType: UITextContentType, keyboardType: UIKeyboardType, required: Bool) {
+    func updateRow(fieldName: String, fieldValue: String, contextType: UITextContentType, keyboardType: UIKeyboardType, required: Bool) {
         setupControls()
         rowLabel.text = "\(fieldName)\(required ? " (*)" : ""):"
         rowTextField.textContentType = contextType
@@ -76,7 +76,7 @@ class EditFormFieldRow: UIView {
     }
 }
 
-extension EditFormFieldRow: UITextFieldDelegate {
+extension EditFormRow: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.endEditing(true)
         return false

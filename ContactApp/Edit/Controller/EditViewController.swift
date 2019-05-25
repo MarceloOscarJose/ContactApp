@@ -14,19 +14,16 @@ class EditViewController: UIViewController {
     @IBOutlet weak var editFormScrollView: UIScrollView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
 
-    var formFields: [EditFormFieldRow] = []
-
     // Data vars
     var delegate: EditViewControllerDelegate!
-    let editFieldtCellIdentifier = "EditFieldCollectionViewCell"
     let model = EditModel()
     var editData: [ContactData]!
     var contactData: Contact!
+    var formFields: [EditFormRow] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupControls()
-        updateForm()
     }
 
     func setupControls() {
@@ -41,6 +38,9 @@ class EditViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+
+        // Create form rows
+        setupForm()
     }
 
     @objc func saveContact() {
@@ -57,7 +57,6 @@ class EditViewController: UIViewController {
         }
 
         self.model.saveContact(contact: contactData)
-        self.updateForm()
 
         if let delegate = self.delegate {
             delegate.contactSaved(contactData: contactData)

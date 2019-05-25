@@ -10,25 +10,25 @@ import UIKit
 
 extension EditViewController {
 
-    func updateForm() {
+    func setupForm() {
 
         editData = model.parseContactEntity(contact: contactData)
         var lastElement: UIView = editFormScrollView
 
         for values in editData {
-            let row = EditFormFieldRow()
-            row.updateField(fieldName: values.name, fieldValue: values.value, contextType: values.contextType, keyboardType: values.keyboardType, required: values.required)
-            editFormScrollView.addSubview(row)
+            let formRow = EditFormRow()
+            formRow.updateRow(fieldName: values.name, fieldValue: values.value, contextType: values.contextType, keyboardType: values.keyboardType, required: values.required)
+            editFormScrollView.addSubview(formRow)
 
             let top: NSLayoutConstraint.Attribute = lastElement == editFormScrollView ? .top : .bottom
-            NSLayoutConstraint(item: row, attribute: .top, relatedBy: .equal, toItem: lastElement, attribute: top, multiplier: 1, constant: 0).isActive = true
-            NSLayoutConstraint(item: row, attribute: .leading, relatedBy: .equal, toItem: editFormScrollView, attribute: .leading, multiplier: 1, constant: 0).isActive = true
-            NSLayoutConstraint(item: row, attribute: .width, relatedBy: .equal, toItem: editFormScrollView, attribute: .width, multiplier: 1, constant: 0).isActive = true
-            NSLayoutConstraint(item: row, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 50).isActive = true
+            NSLayoutConstraint(item: formRow, attribute: .top, relatedBy: .equal, toItem: lastElement, attribute: top, multiplier: 1, constant: 0).isActive = true
+            NSLayoutConstraint(item: formRow, attribute: .leading, relatedBy: .equal, toItem: editFormScrollView, attribute: .leading, multiplier: 1, constant: 0).isActive = true
+            NSLayoutConstraint(item: formRow, attribute: .width, relatedBy: .equal, toItem: editFormScrollView, attribute: .width, multiplier: 1, constant: 0).isActive = true
+            NSLayoutConstraint(item: formRow, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 50).isActive = true
 
-            lastElement = row
+            lastElement = formRow
             
-            formFields.append(row)
+            formFields.append(formRow)
         }
 
         NSLayoutConstraint(item: lastElement, attribute: .bottom, relatedBy: .equal, toItem: editFormScrollView, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
