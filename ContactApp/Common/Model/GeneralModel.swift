@@ -11,14 +11,14 @@ import UIKit
 class GeneralModel: NSObject {
 
     var contactDataFields: [ContactData] = [
-        ContactData(key: "firstName", name: "First name", contextType: .name, keyboardType: .alphabet, required: true, value: ""),
-        ContactData(key: "lastName", name: "Last name", contextType: .name, keyboardType: .alphabet, required: true, value: ""),
-        ContactData(key: "phoneNumber", name: "Phone", contextType: .telephoneNumber, keyboardType: .phonePad, required: true, value: ""),
-        ContactData(key: "streetAddress1", name: "First Address line", contextType: .streetAddressLine1, keyboardType: .asciiCapable, required: false, value: ""),
-        ContactData(key: "streetAddress2", name: "Second Address line", contextType: .streetAddressLine2, keyboardType: .asciiCapable, required: false, value: ""),
-        ContactData(key: "city", name: "City", contextType: .addressCity, keyboardType: .asciiCapable, required: false, value: ""),
-        ContactData(key: "state", name: "State", contextType: .addressState, keyboardType: .asciiCapable, required: false, value: ""),
-        ContactData(key: "zipCode", name: "Zip code", contextType: .postalCode, keyboardType: .decimalPad, required: false, value: "")
+        ContactData(key: "firstName", name: "First name", keyboardType: .alphabet, required: true, value: ""),
+        ContactData(key: "lastName", name: "Last name", keyboardType: .alphabet, required: true, value: ""),
+        ContactData(key: "phoneNumber", name: "Phone", keyboardType: .phonePad, required: true, value: ""),
+        ContactData(key: "streetAddress1", name: "Address line 1", keyboardType: .asciiCapable, required: false, value: ""),
+        ContactData(key: "streetAddress2", name: "Address line 2", keyboardType: .asciiCapable, required: false, value: ""),
+        ContactData(key: "city", name: "City", keyboardType: .asciiCapable, required: false, value: ""),
+        ContactData(key: "state", name: "State", keyboardType: .asciiCapable, required: false, value: ""),
+        ContactData(key: "zipCode", name: "Zip code", keyboardType: .decimalPad, required: false, value: "")
     ]
 
     func getInitContacts() -> [ContactCodable] {
@@ -39,7 +39,6 @@ class GeneralModel: NSObject {
 struct ContactData {
     let key: String
     let name: String
-    let contextType: UITextContentType
     let keyboardType: UIKeyboardType
     let required: Bool
     var value: String

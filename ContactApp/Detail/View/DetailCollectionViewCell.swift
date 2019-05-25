@@ -12,8 +12,8 @@ class DetailCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var detailFieldLabel: UITextView!
 
-    let fieldNameAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 16) as Any]
-    let fieldDataAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue", size: 16) as Any]
+    let fieldNameAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 15) as Any]
+    let fieldDataAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue", size: 14) as Any]
 
     override func awakeFromNib() {
         super.awakeFromNib()

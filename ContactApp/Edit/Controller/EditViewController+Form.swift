@@ -17,7 +17,7 @@ extension EditViewController {
 
         for values in editData {
             let formRow = EditFormRowView()
-            formRow.updateRow(fieldName: values.name, fieldValue: values.value, contextType: values.contextType, keyboardType: values.keyboardType, required: values.required)
+            formRow.updateRow(fieldName: values.name, fieldValue: values.value, keyboardType: values.keyboardType, required: values.required)
             editFormScrollView.addSubview(formRow)
 
             let topAnchor = lastElement == editFormScrollView ? lastElement.topAnchor : lastElement.bottomAnchor

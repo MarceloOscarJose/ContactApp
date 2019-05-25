@@ -39,9 +39,8 @@ class EditFormRowView: UIView {
         contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
 
-    func updateRow(fieldName: String, fieldValue: String, contextType: UITextContentType, keyboardType: UIKeyboardType, required: Bool) {
+    func updateRow(fieldName: String, fieldValue: String, keyboardType: UIKeyboardType, required: Bool) {
         rowLabel.text = "\(fieldName)\(required ? " (*)" : ""):"
-        rowTextField.textContentType = contextType
         rowTextField.placeholder = fieldName
         rowTextField.text = fieldValue
         rowTextField.keyboardType = keyboardType
