@@ -12,7 +12,14 @@ class EditViewController: UIViewController {
 
     // IBOutlets
     @IBOutlet weak var editFormScrollView: UIScrollView!
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+
+    lazy var formStackView: UIStackView = {
+        let formStackView = UIStackView()
+        formStackView.axis = .vertical
+        formStackView.spacing = 0
+        formStackView.translatesAutoresizingMaskIntoConstraints = false
+        return formStackView
+    }()
 
     // Data vars
     var delegate: EditViewControllerDelegate!
@@ -24,6 +31,8 @@ class EditViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupControls()
+        setupConstraints()
+        setupForm()
     }
 
     func setupControls() {
@@ -40,9 +49,14 @@ class EditViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
 
         editData = model.parseContactEntity(contact: contactData)
+    }
 
-        // Create form rows
-        setupForm()
+    func setupConstraints() {
+        editFormScrollView.addSubview(formStackView)
+        formStackView.topAnchor.constraint(equalTo: editFormScrollView.topAnchor).isActive = true
+        formStackView.leftAnchor.constraint(equalTo: editFormScrollView.leftAnchor).isActive = true
+        formStackView.widthAnchor.constraint(equalTo: editFormScrollView.widthAnchor).isActive = true
+        formStackView.bottomAnchor.constraint(equalTo: editFormScrollView.bottomAnchor).isActive = true
     }
 
     @objc func saveContact() {

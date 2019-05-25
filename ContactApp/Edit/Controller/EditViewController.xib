@@ -12,7 +12,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditViewController" customModule="ContactApp" customModuleProvider="target">
             <connections>
-                <outlet property="bottomConstraint" destination="ZCT-mo-IGL" id="xt8-2u-dGR"/>
                 <outlet property="editFormScrollView" destination="I8z-KW-wNh" id="azK-N9-tJG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -34,6 +33,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="I8z-KW-wNh" secondAttribute="bottom" id="ZCT-mo-IGL"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="37.681159420289859" y="34.821428571428569"/>
         </view>
     </objects>
 </document>

@@ -12,24 +12,12 @@ extension EditViewController {
 
     func setupForm() {
 
-        var lastElement: UIView = editFormScrollView
-
         for values in editData {
             let formRow = EditFormRowView()
             formRow.updateRow(fieldName: values.name, fieldValue: values.value, keyboardType: values.keyboardType, required: values.required)
-            editFormScrollView.addSubview(formRow)
-
-            let topAnchor = lastElement == editFormScrollView ? lastElement.topAnchor : lastElement.bottomAnchor
-            formRow.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
-            formRow.leadingAnchor.constraint(equalTo: editFormScrollView.leadingAnchor).isActive = true
-            formRow.widthAnchor.constraint(equalTo: editFormScrollView.widthAnchor, multiplier: 1).isActive = true
+            formStackView.addArrangedSubview(formRow)
             formRow.heightAnchor.constraint(equalToConstant: 50).isActive = true
-
-            lastElement = formRow
-            formFields.append(formRow)
         }
-
-        lastElement.bottomAnchor.constraint(equalTo: editFormScrollView.bottomAnchor, constant: 0).isActive = true
     }
 
     func showFormErrorValidation() {
