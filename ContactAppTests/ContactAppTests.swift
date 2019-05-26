@@ -30,9 +30,9 @@ class ContactAppTests: XCTestCase {
     func testListModel() {
         let model = ListModel()
 
-        model.changeInitalizedContacts(value: false)
+        ConfigManager.shared.changeInitalizedContacts(value: false)
         let contacts = model.getContacts()
-        model.changeInitalizedContacts(value: true)
+        ConfigManager.shared.changeInitalizedContacts(value: true)
         XCTAssert(contacts.count == 8)
         XCTAssert(contacts[2].count == 3)
     }
@@ -41,7 +41,7 @@ class ContactAppTests: XCTestCase {
         let model = EditModel()
         let detailModel = DetailModel()
 
-        let contact = Contact(context: PersistenceManager.shared.persistentContainer.viewContext)
+        let contact = Contact(context: PersistenceManager.shared.container.viewContext)
         contact.contactID = "123"
         contact.firstName = "Tom"
         contact.lastName = "Jackson"

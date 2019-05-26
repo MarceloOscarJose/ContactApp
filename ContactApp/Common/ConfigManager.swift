@@ -27,6 +27,14 @@ class ConfigManager: NSObject {
             }
         }
     }
+
+    func changeInitalizedContacts(value: Bool) {
+        UserDefaults.standard.set(value, forKey: config.initilizedContactKey)
+    }
+
+    func shouldInitilizeContacts() -> Bool {
+        return UserDefaults.standard.bool(forKey: config.initilizedContactKey)
+    }
 }
 
 struct ConfigData: Codable {

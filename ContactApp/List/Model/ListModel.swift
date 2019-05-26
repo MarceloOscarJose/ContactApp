@@ -13,23 +13,15 @@ class ListModel: GeneralModel {
     let initilizedContactKey = ConfigManager.shared.config.initilizedContactKey
 
     func initContacts() {
-        if !shouldInitilizeContacts() {
+        if !ConfigManager.shared.shouldInitilizeContacts() {
             let contacts = getInitContacts()
 
             for contact in contacts {
                 saveContact(contact: contact)
             }
 
-            changeInitalizedContacts(value: true)
+            ConfigManager.shared.changeInitalizedContacts(value: true)
         }
-    }
-
-    func changeInitalizedContacts(value: Bool) {
-        UserDefaults.standard.set(value, forKey: initilizedContactKey)
-    }
-
-    func shouldInitilizeContacts() -> Bool {
-        return UserDefaults.standard.bool(forKey: initilizedContactKey)
     }
 
     func saveContact(contact: ContactCodable) {
