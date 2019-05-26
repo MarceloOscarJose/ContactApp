@@ -33,7 +33,7 @@ class ListModel: GeneralModel {
     }
 
     func saveContact(contact: ContactCodable) {
-        let context = PersistenceManager.shared.persistentContainer.viewContext
+        let context = PersistenceManager.shared.container.viewContext
 
         do {
             let newContact = Contact(context: context)
@@ -55,7 +55,7 @@ class ListModel: GeneralModel {
     }
 
     func createNewContact() -> Contact {
-        let context = PersistenceManager.shared.persistentContainer.viewContext
+        let context = PersistenceManager.shared.container.viewContext
         let contact = Contact(context: context)
 
         for attr in Contact.entity().attributesByName {

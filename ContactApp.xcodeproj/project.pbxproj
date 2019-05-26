@@ -201,8 +201,8 @@
 		9C1C78A12294593900227047 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9CA3FB25229819E8002D90E4 /* GeneralModel.swift */,
 				9CD5222F2299C4030053E773 /* Contact.swift */,
+				9CA3FB25229819E8002D90E4 /* GeneralModel.swift */,
 				9C9431152299C10F0001492F /* ContactApp.xcdatamodeld */,
 			);
 			path = Model;

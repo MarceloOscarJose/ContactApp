@@ -36,7 +36,8 @@ class EditViewController: UIViewController {
     }
 
     func setupControls() {
-        navigationItem.largeTitleDisplayMode = .never
+        self.title = contactData.firstName.isEmpty ? "New contact" : "Edit contact"
+        navigationItem.largeTitleDisplayMode = .always
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveContact))
 
         let gesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
@@ -64,7 +65,7 @@ class EditViewController: UIViewController {
 
         for (index, value) in editData.enumerated() {
             if let fieldValue = getFieldValue(index: index) {
-                if value.required && fieldValue == "" {
+                if value.required && fieldValue.isEmpty {
                     showFormErrorValidation()
                     return
                 }

@@ -11,7 +11,7 @@ import UIKit
 class EditModel: GeneralModel {
 
     func saveContact(contact: Contact) {
-        let context = PersistenceManager.shared.persistentContainer.viewContext
+        let context = PersistenceManager.shared.container.viewContext
 
         do {
             contact.didSave()

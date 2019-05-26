@@ -17,7 +17,7 @@ class ListViewController: UIViewController, ContactDetailDelegate, EditViewContr
     lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.dimsBackgroundDuringPresentation = false
-        searchController.searchBar.tintColor = UIColor.ligthBlue
+        searchController.searchBar.tintColor = UIColor.lightGray
         searchController.searchBar.searchBarStyle = .minimal
         searchController.searchBar.placeholder = "Search by name or phone"
         return searchController

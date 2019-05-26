@@ -11,7 +11,7 @@ import UIKit
 class DetailModel: GeneralModel {
 
     func deleteContact(contact: Contact) {
-        let context = PersistenceManager.shared.persistentContainer.viewContext
+        let context = PersistenceManager.shared.container.viewContext
 
         do {
             if let contactData = PersistenceManager.shared.fetchById(Contact.self, idKey: "contactID", id: contact.contactID) {

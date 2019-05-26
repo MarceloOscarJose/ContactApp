@@ -12,7 +12,7 @@ class PersistenceManager: NSObject {
 
     static let shared = PersistenceManager()
 
-    lazy var persistentContainer: NSPersistentContainer = {
+    lazy var container: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "ContactApp")
 
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
@@ -24,7 +24,7 @@ class PersistenceManager: NSObject {
     }()
 
     func saveContext () {
-        let context = persistentContainer.viewContext
+        let context = container.viewContext
 
         if context.hasChanges {
             do {
@@ -44,7 +44,7 @@ class PersistenceManager: NSObject {
         })
 
         do {
-            let fetchedObjects = try persistentContainer.viewContext.fetch(fetchRequest) as? [T]
+            let fetchedObjects = try container.viewContext.fetch(fetchRequest) as? [T]
             return fetchedObjects ?? [T]()
         } catch {
             print(error)
@@ -57,7 +57,7 @@ class PersistenceManager: NSObject {
         fetchRequest.predicate = NSPredicate(format: "\(idKey) = %@", id)
 
         do {
-            let fetchedObject = try persistentContainer.viewContext.fetch(fetchRequest).first as? T
+            let fetchedObject = try container.viewContext.fetch(fetchRequest).first as? T
             return fetchedObject ?? nil
         } catch {
             print(error)
