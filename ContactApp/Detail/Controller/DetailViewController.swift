@@ -34,7 +34,7 @@ class DetailViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editAction))
 
-        containerView = PXStickyHeaderCollectionView(initHeaderHeight: 100, minHeaderHeight: 80, maxHeaderHeight: 150, headerView: headerView)
+        containerView = PXStickyHeaderCollectionView(initHeaderHeight: 100, minHeaderHeight: 50, maxHeaderHeight: 150, headerView: headerView)
         containerView.translatesAutoresizingMaskIntoConstraints = false
 
         self.view.addSubview(containerView)
