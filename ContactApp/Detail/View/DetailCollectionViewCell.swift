@@ -19,9 +19,13 @@ class DetailCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
 
-    func updateCell(fieldName: String, fieldData: String) {
+    func updateCell(fieldName: String, fieldData: String, dataType: UIDataDetectorTypes?) {
         let finalText = NSMutableAttributedString(string: fieldName, attributes: fieldNameAttributes)
         finalText.append(NSAttributedString(string: ": \(fieldData)", attributes: fieldDataAttributes))
         detailFieldLabel.attributedText = finalText
+
+        if let dataType = dataType {
+            detailFieldLabel.dataDetectorTypes = dataType
+        }
     }
 }
